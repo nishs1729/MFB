@@ -1,0 +1,13 @@
+data
+archive
+blend*
+__py*
+plots
+.logs
+test*
+precession
+scripts_plotting
+temp*
+cscripts
+.ipy*
+.vs*

@@ -1,0 +1,10 @@
+VIZ_OUTPUT
+{
+	MODE = CELLBLENDER
+	FILENAME = outputDir &"/viz/mfb"
+	MOLECULES
+	{
+		NAME_LIST {Ca "X*" "VDCC*"}
+		ITERATION_NUMBERS {ALL_DATA @ [[0 TO 100000 STEP 10]]}
+	}
+}

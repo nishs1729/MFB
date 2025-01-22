@@ -1,0 +1,68 @@
+PMCA_density_presynaptic = 180
+
+// rates for PMCA pump
+// According to Sneyd et al, 2003, Biophys. J.
+//Vmax for PMCA channels is 28 uM/s.
+//At 10/s per channel we'll need 1900 channels or 180 per um^2
+/*
+k_PMCA0_1 = 1.5e8
+k_PMCA1_0 = 20
+k_PMCA1_2 = 10
+k_PMCA2_0 = 1e5
+k_PMCA0_leak = 5
+*/
+
+// But that's too slow so let's increase the density to 1000 um^2
+// and the pump rate to 100/s
+k_PMCA0_1 = 1.5e8
+k_PMCA1_0 = 20
+k_PMCA1_2 = 100
+k_PMCA2_0 = 1e5
+
+// Calculate leak rate needed to achieve desired [Ca]i
+presynaptic_area = 0.5*4*4
+cai = ca_conc_presynaptic
+Km = (k_PMCA1_0+k_PMCA1_2)/k_PMCA0_1
+E0 = 1e15*(PMCA_density_presynaptic*presynaptic_area/presynaptic_vol)/6.02205e23
+ES = (E0*cai)/(Km+cai)
+E = E0-ES
+Vmax = k_PMCA1_2*E0
+V = (Vmax*cai)/(Km+cai)
+pmca_pump_rate = V/E
+
+/* leak rate calculated above from [Ca]i given by ca_conc_base_presynaptic */
+k_PMCA0_leak = pmca_pump_rate
+
+
+DEFINE_MOLECULES {
+
+    PMCA0 {D_2D = 0}
+    PMCA1 {D_2D = 0}
+    PMCA2 {D_2D = 0}
+
+}
+
+DEFINE_REACTIONS {
+
+    // PMCA pump with built-in leak
+    PMCA0'       -> PMCA0' + Ca0, [k_PMCA0_leak]  // leak    
+    
+
+    Ca1, + PMCA0' <-> PMCA1_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA1_1'       -> PMCA1_2'      [k_PMCA1_2]
+    PMCA1_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca2, + PMCA0' <-> PMCA2_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA2_1'       -> PMCA2_2'      [k_PMCA1_2]
+    PMCA2_2'       -> PMCA0'        [k_PMCA2_0]
+}
+
+INSTANTIATE PMCA OBJECT
+{
+	/* presynaptic PMCA */
+	presynaptic_PMCA RELEASE_SITE {
+        SHAPE = (MFB.bouton[ALL])
+        MOLECULE = PMCA0'
+        DENSITY = PMCA_density_presynaptic
+	}
+}

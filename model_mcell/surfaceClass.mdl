@@ -1,0 +1,5 @@
+DEFINE_SURFACE_CLASSES {
+	transp {
+		TRANSPARENT = ALL
+	}
+}

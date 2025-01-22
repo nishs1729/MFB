@@ -1,0 +1,57 @@
+cb_conc = 40e-6
+Xcb_conc = 200e-9
+
+// calB reaction rates
+cbH_on  = 0.55e7
+cbH_off = 2.6
+cbM_on  = 4.35e7
+cbM_off = 35.8
+
+// calbindin eq fractions at [cbH0M0]o = 45 uM and [Ca]i = ~100 nm
+cbH0M0_feq = 0.542
+cbH0M1_feq = 0.132
+cbH1M0_feq = 0.229
+cbH1M1_feq = 0.0557
+cbH0M2_feq = 0.008
+cbH2M0_feq = 0.0242
+cbH1M2_feq = 0.00338
+cbH2M1_feq = 0.00589
+cbH2M2_feq = 0.000358
+
+kH0H1 = cb_conc*(cbH0M0_feq + cbH0M1_feq + cbH0M2_feq)*cbH_on*2
+kH1H0 = cb_conc*(cbH1M0_feq + cbH1M1_feq + cbH1M2_feq)*cbH_off
+
+kH1H2 = cb_conc*(cbH1M0_feq + cbH1M1_feq + cbH1M2_feq)*cbH_on 
+kH2H1 = cb_conc*(cbH2M0_feq + cbH2M1_feq + cbH2M2_feq)*cbH_off*2
+
+kM0M1 = cb_conc*(cbH0M0_feq + cbH1M0_feq + cbH2M0_feq)*cbM_on*2
+kM1M0 = cb_conc*(cbH0M1_feq + cbH1M1_feq + cbH2M1_feq)*cbM_off
+
+kM1M2 = cb_conc*(cbH0M1_feq + cbH1M1_feq + cbH2M1_feq)*cbM_on 
+kM2M1 = cb_conc*(cbH0M2_feq + cbH1M2_feq + cbH2M2_feq)*cbM_off*2
+
+kf_cb =  kH0H1 + kH1H2 + kM0M1 + kM1M2
+kb_cb = (kH1H0 + kH2H1 + kM1M0 + kM2M1)/Xcb_conc
+
+p = 0.867
+
+DEFINE_MOLECULES {
+    Xcb  {D_3D = 0}
+}
+
+DEFINE_REACTIONS {
+    
+    Ca -> NULL [kf_cb*p]
+    Xcb  -> Xcb + Ca [kb_cb*p]
+
+}
+
+INSTANTIATE XCB OBJECT
+{
+	/* Modelling buffers (Calbindin) assuming their constant concentrations */
+	presynaptic_Xcb RELEASE_SITE {
+		SHAPE = (MFB.bouton[ALL])
+		MOLECULE = Xcb
+		CONCENTRATION = Xcb_conc
+	}
+}

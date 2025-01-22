@@ -1,0 +1,145 @@
+REACTION_DATA_OUTPUT
+{
+	OUTPUT_BUFFER_SIZE = 1000
+	STEP = 1e-05
+	SHOW_EXACT_TIME = OFF
+	HEADER = "#"
+
+/*	Ca */
+	{	COUNT[Ca, MFB.bouton[ALL]] : "tot",
+		COUNT[Ca, MFB.bouton[AZ1],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ1",
+		COUNT[Ca, MFB.bouton[AZ2],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ2",
+		COUNT[Ca, MFB.bouton[AZ3],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ3",
+		COUNT[Ca, MFB.bouton[AZ4],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ4",
+		COUNT[Ca, MFB.bouton[AZ5],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ5",
+		COUNT[Ca, MFB.bouton[AZ6],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ6",
+		COUNT[Ca, MFB.bouton[AZ7],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ7",
+		COUNT[Ca, MFB.bouton[AZ8],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ8",
+		COUNT[Ca, MFB.bouton[AZ9],  ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ9",
+		COUNT[Ca, MFB.bouton[AZ10], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ10",
+		COUNT[Ca, MFB.bouton[AZ11], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ11",
+		COUNT[Ca, MFB.bouton[AZ12], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ12",
+		COUNT[Ca, MFB.bouton[AZ13], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ13",
+		COUNT[Ca, MFB.bouton[AZ14], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ14",
+		COUNT[Ca, MFB.bouton[AZ15], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ15",
+		COUNT[Ca, MFB.bouton[AZ16], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ16",
+		COUNT[Ca, MFB.bouton[AZ17], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ17",
+		COUNT[Ca, MFB.bouton[AZ18], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ18",
+		COUNT[Ca, MFB.bouton[AZ19], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ19",
+		COUNT[Ca, MFB.bouton[AZ20], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ20",
+		COUNT[Ca, MFB.bouton[AZ21], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ21",
+		COUNT[Ca, MFB.bouton[AZ22], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ22",
+		COUNT[Ca, MFB.bouton[AZ23], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ23",
+		COUNT[Ca, MFB.bouton[AZ24], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ24",
+		COUNT[Ca, MFB.bouton[AZ25], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ25",
+		COUNT[Ca, MFB.bouton[AZ26], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ26",
+		COUNT[Ca, MFB.bouton[AZ27], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ27",
+		COUNT[Ca, MFB.bouton[AZ28], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ28",
+		COUNT[Ca, MFB.bouton[AZ29], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ29",
+		COUNT[Ca, MFB.bouton[AZ30], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ30",
+		COUNT[Ca, MFB.bouton[AZ31], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ31",
+		COUNT[Ca, MFB.bouton[AZ32], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ32",
+		COUNT[Ca, MFB.bouton[AZ33], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ33",
+		COUNT[Ca, MFB.bouton[AZ34], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ34",
+		COUNT[Ca, MFB.bouton[AZ35], ESTIMATE_CONCENTRATION]*EXPRESSION[2.0] : "AZ35"
+
+	}	=> outputDir &"/dat/ca.dat"
+
+
+/*	VDCC Flux (Cumulative)*/
+	{COUNT[VDCC_Ca_flux,WORLD]} => outputDir & "/dat/vdcc_pq_ca_flux.dat"
+
+/*	PMCA and Leak */
+	{	COUNT[PMCA_Ca_flux_out, WORLD] - COUNT[PMCA_Ca_flux_in, WORLD] : "PMCAFlux",
+		COUNT[PMCA_Ca_leak_flux, WORLD] : "PMCAleakFlux"
+	} => outputDir &"/dat/pmca&leak_ca_flux.dat"
+/**/
+
+/*	VDCC sync, async and spont Glu release /
+	{TRIGGER[synchronous_release_0, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.sync_0.dat"
+	{TRIGGER[synchronous_release_1, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.sync_1.dat"
+	{TRIGGER[synchronous_release_2, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.sync_2.dat"
+	{TRIGGER[asynchronous_release_0, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.async_0.dat"
+	{TRIGGER[asynchronous_release_1, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.async_1.dat"
+	{TRIGGER[asynchronous_release_2, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.async_2.dat"
+	{TRIGGER[asynchronous_release_3, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.async_3.dat"
+	{TRIGGER[asynchronous_release_4, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.async_4.dat"
+	{TRIGGER[spontaneous_release, MFB.bouton]}
+		=> outputDir & "/dat/vdcc.spont.dat"
+**/
+
+/*	calbindin /
+	{	COUNT[cbH0M0, MFB.bouton] : "h0m0",
+		COUNT[cbH0M1, MFB.bouton] : "h0m1",
+		COUNT[cbH0M2, MFB.bouton] : "h0m2",
+		COUNT[cbH1M0, MFB.bouton] : "h1m0",
+		COUNT[cbH1M1, MFB.bouton] : "h1m1",
+		COUNT[cbH1M2, MFB.bouton] : "h1m2",
+		COUNT[cbH2M0, MFB.bouton] : "h2m0",
+		COUNT[cbH2M1, MFB.bouton] : "h2m1",
+		COUNT[cbH2M2, MFB.bouton] : "h2m2"
+	}	=> outputDir & "/dat/cb_mol.dat"
+**/
+
+/* AZ /
+	{   COUNT[X0Y0, WORLD],
+        COUNT[X1Y0, WORLD],
+        COUNT[X2Y0, WORLD],
+        COUNT[X3Y0, WORLD],
+        COUNT[X4Y0, WORLD],
+        COUNT[X5Y0, WORLD],
+        COUNT[X0Y1, WORLD],
+        COUNT[X1Y1, WORLD],
+        COUNT[X2Y1, WORLD],
+        COUNT[X3Y1, WORLD],
+        COUNT[X4Y1, WORLD],
+        COUNT[X5Y1, WORLD],
+        COUNT[X0Y2, WORLD],
+        COUNT[X1Y2, WORLD],
+        COUNT[X2Y2, WORLD],
+        COUNT[X3Y2, WORLD],
+        COUNT[X4Y2, WORLD],
+        COUNT[X5Y2, WORLD]
+    }	=> outputDir &"/dat/az.dat"
+**/
+
+/*	Readily Releasable Pool (RRP) /
+	{
+		EXPRESSION[15]
+		- COUNT[X0Y0e, MFB.bouton]
+		- COUNT[X1Y0e, MFB.bouton]
+		- COUNT[X2Y0e, MFB.bouton]
+		- COUNT[X3Y0e, MFB.bouton]
+		- COUNT[X4Y0e, MFB.bouton]
+		- COUNT[X5Y0e, MFB.bouton]
+		- COUNT[X0Y1e, MFB.bouton]
+		- COUNT[X1Y1e, MFB.bouton]
+		- COUNT[X2Y1e, MFB.bouton]
+		- COUNT[X3Y1e, MFB.bouton]
+		- COUNT[X4Y1e, MFB.bouton]
+		- COUNT[X5Y1e, MFB.bouton]
+		- COUNT[X0Y2e, MFB.bouton]
+		- COUNT[X1Y2e, MFB.bouton]
+		- COUNT[X2Y2e, MFB.bouton]
+		- COUNT[X3Y2e, MFB.bouton]
+		- COUNT[X4Y2e, MFB.bouton]
+		- COUNT[X5Y2e, MFB.bouton]
+		- COUNT[X5Y0r, MFB.bouton]
+		- COUNT[X5Y1r, MFB.bouton]
+		- COUNT[X0Y2r, MFB.bouton]
+		- COUNT[X1Y2r, MFB.bouton]
+		- COUNT[X2Y2r, MFB.bouton]
+		- COUNT[X3Y2r, MFB.bouton]
+		- COUNT[X4Y2r, MFB.bouton]
+		- COUNT[X5Y2r, MFB.bouton] : "RRP"
+	}	=> outputDir &"/dat/rrp.dat"
+*/
+}

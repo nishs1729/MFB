@@ -1,0 +1,57 @@
+TIME_STEP = 1e-06
+VACANCY_SEARCH_DISTANCE = 10
+
+
+/* Store the value of SEED in variable seed */
+sprintf(seed,"%05g",SEED)
+
+/* Specify directory for output data */
+INCLUDE_FILE = "../outputDir.mdl"
+
+
+//er_vol=(3.9*0.1*0.1)
+presynaptic_vol=(4.1*2.5*0.8)
+//er_vfrac=er_vol/presynaptic_vol
+
+ca_conc_presynaptic = 100e-9
+
+DEFINE_MOLECULES {
+	//Glu {D_3D = 2.2e-06}
+	Ca  {D_3D = 2.2e-06}
+}
+
+INCLUDE_FILE = "../mfb_bouton_geometry_with_CP.mdl"
+INSTANTIATE MFB OBJECT
+{
+	bouton OBJECT bouton {}	// MFB bouton
+	/*
+	CP50 OBJECT CP50 {} 
+	CP75 OBJECT CP75 {} 
+	CP100 OBJECT CP100 {} 
+	CP125 OBJECT CP125 {} 
+	CP150 OBJECT CP150 {} 
+	CP175 OBJECT CP175 {} 
+	CP200 OBJECT CP200 {} 
+	CP225 OBJECT CP225 {} 
+	CP250 OBJECT CP250 {} 
+	CP275 OBJECT CP275 {} 
+	CP300 OBJECT CP300 {} 
+	CP325 OBJECT CP325 {} 
+	CP350 OBJECT CP350 {} 
+	CP375 OBJECT CP375 {} 
+	CP400 OBJECT CP400 {} 
+	CP425 OBJECT CP425 {} 
+	CP450 OBJECT CP450 {} 
+	CP475 OBJECT CP475 {} 
+	CP500 OBJECT CP500 {} 
+	*/
+	//presynaptic_active_zone OBJECT presynaptic_active_zone {}
+
+	/* presynaptic cytoplasm Ca concentration */
+	presynaptic_calcium RELEASE_SITE {
+	    SHAPE = (MFB.bouton[ALL])
+	    MOLECULE = Ca
+	    CONCENTRATION = ca_conc_presynaptic
+	}
+
+}

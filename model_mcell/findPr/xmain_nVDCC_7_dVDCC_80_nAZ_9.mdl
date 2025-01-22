@@ -1,0 +1,33 @@
+ITERATIONS = 24e3
+INCLUDE_FILE = "../initialization.mdl"
+INCLUDE_FILE = "../misc.mdl"
+
+outputDir = outputDir & "findPr/"
+
+nVDCC = "7" // number of VDCCs in a cluster [1:8]
+dVDCC = "80" // VDCC and AZ coupling distance [60:200:20]
+nAZ = "9" // number of active zones (7, 19, 29)
+
+isi = "40" // ms
+nAP = "2" // number of AP
+
+outputDir = outputDir&"nVDCC_"&nVDCC&"_dVDCC_"&dVDCC&"_nAZ_"&nAZ&"/s_"&seed
+
+k_VDCC_C01 = "vdcc_dat/VDCC_C01_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C12 = "vdcc_dat/VDCC_C12_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C23 = "vdcc_dat/VDCC_C23_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C34 = "vdcc_dat/VDCC_C34_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C43 = "vdcc_dat/VDCC_C43_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C32 = "vdcc_dat/VDCC_C32_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C21 = "vdcc_dat/VDCC_C21_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_C10 = "vdcc_dat/VDCC_C10_" & isi & "ms_N" & nAP & ".dat"
+k_VDCC_Ca  = "vdcc_dat/VDCC_Ca_"  & isi & "ms_N" & nAP & "_2.0mM.dat"
+
+INCLUDE_FILE = "../vdcc.mdl"
+INCLUDE_FILE = "../buffers.mdl"
+//INCLUDE_FILE = "../constBuffer.mdl"
+//INCLUDE_FILE = "../az/az_" & nAZ & ".mdl"
+INCLUDE_FILE = "../pmca.mdl"
+
+//INCLUDE_FILE = "vizOutput.mdl"
+INCLUDE_FILE = "output.mdl"

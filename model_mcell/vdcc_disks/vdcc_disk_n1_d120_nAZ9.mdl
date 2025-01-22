@@ -1,0 +1,15 @@
+vdcc_disk RELEASE_SITE {
+    SHAPE = LIST
+    MOLECULE_POSITIONS {
+		VDCC_C0' [0.085, 0.085, 0.0]
+		VDCC_C0' [-0.415, 0.085, 0.0]
+		VDCC_C0' [0.585, 0.085, 0.0]
+		VDCC_C0' [-0.165, -0.315, 0.0]
+		VDCC_C0' [0.335, 0.485, 0.0]
+		VDCC_C0' [-0.165, 0.485, 0.0]
+		VDCC_C0' [0.335, -0.315, 0.0]
+		VDCC_C0' [-0.915, 0.085, 0.0]
+		VDCC_C0' [1.085, 0.085, 0.0]
+    }
+    SITE_RADIUS = 0.010
+}

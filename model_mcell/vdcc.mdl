@@ -1,0 +1,29 @@
+DEFINE_MOLECULES {
+    VDCC_C0 {D_2D = 0}
+    VDCC_C1 {D_2D = 0}
+    VDCC_C2 {D_2D = 0}
+    VDCC_C3 {D_2D = 0}
+    VDCC_O  {D_2D = 0}
+}
+
+DEFINE_REACTIONS {
+    /* P/Q-type Voltage Dependent Calcium Channels */
+    /* From Bischoffberger et al., 2002, Neuroscience J.*/
+    VDCC_C0' <-> VDCC_C1'       [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC_C1' <-> VDCC_C2'       [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC_C2' <-> VDCC_C3'       [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC_C3' <-> VDCC_O'        [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC_O'   -> VDCC_O' + Ca,  [k_VDCC_Ca] : VDCC_Ca_flux
+}
+
+/* VDCC clusters */
+vdcc_disk_file = "vdcc_disks/vdcc_disk_n" & nVDCC & "_d" & dVAZ & "_nAZ" & nAZ & ".mdl"
+INCLUDE_FILE = vdcc_disk_file
+
+
+INSTANTIATE VDCC OBJECT
+{
+    vdcc_disk OBJECT vdcc_disk {
+        TRANSLATE = [0, 0, -0.400]
+    }
+}

@@ -1,0 +1,438 @@
+DEFINE_MOLECULES {
+    VDCC1_C0 {D_2D = 0}
+    VDCC1_C1 {D_2D = 0}
+    VDCC1_C2 {D_2D = 0}
+    VDCC1_C3 {D_2D = 0}
+    VDCC1_O  {D_2D = 0}
+
+    VDCC2_C0 {D_2D = 0}
+    VDCC2_C1 {D_2D = 0}
+    VDCC2_C2 {D_2D = 0}
+    VDCC2_C3 {D_2D = 0}
+    VDCC2_O  {D_2D = 0}
+
+    VDCC3_C0 {D_2D = 0}
+    VDCC3_C1 {D_2D = 0}
+    VDCC3_C2 {D_2D = 0}
+    VDCC3_C3 {D_2D = 0}
+    VDCC3_O  {D_2D = 0}
+
+    VDCC4_C0 {D_2D = 0}
+    VDCC4_C1 {D_2D = 0}
+    VDCC4_C2 {D_2D = 0}
+    VDCC4_C3 {D_2D = 0}
+    VDCC4_O  {D_2D = 0}
+
+    VDCC5_C0 {D_2D = 0}
+    VDCC5_C1 {D_2D = 0}
+    VDCC5_C2 {D_2D = 0}
+    VDCC5_C3 {D_2D = 0}
+    VDCC5_O  {D_2D = 0}
+
+    VDCC6_C0 {D_2D = 0}
+    VDCC6_C1 {D_2D = 0}
+    VDCC6_C2 {D_2D = 0}
+    VDCC6_C3 {D_2D = 0}
+    VDCC6_O  {D_2D = 0}
+
+    VDCC7_C0 {D_2D = 0}
+    VDCC7_C1 {D_2D = 0}
+    VDCC7_C2 {D_2D = 0}
+    VDCC7_C3 {D_2D = 0}
+    VDCC7_O  {D_2D = 0}
+
+    VDCC8_C0 {D_2D = 0}
+    VDCC8_C1 {D_2D = 0}
+    VDCC8_C2 {D_2D = 0}
+    VDCC8_C3 {D_2D = 0}
+    VDCC8_O  {D_2D = 0}
+
+    VDCC9_C0 {D_2D = 0}
+    VDCC9_C1 {D_2D = 0}
+    VDCC9_C2 {D_2D = 0}
+    VDCC9_C3 {D_2D = 0}
+    VDCC9_O  {D_2D = 0}
+
+    VDCC10_C0 {D_2D = 0}
+    VDCC10_C1 {D_2D = 0}
+    VDCC10_C2 {D_2D = 0}
+    VDCC10_C3 {D_2D = 0}
+    VDCC10_O  {D_2D = 0}
+
+    VDCC11_C0 {D_2D = 0}
+    VDCC11_C1 {D_2D = 0}
+    VDCC11_C2 {D_2D = 0}
+    VDCC11_C3 {D_2D = 0}
+    VDCC11_O  {D_2D = 0}
+
+    VDCC12_C0 {D_2D = 0}
+    VDCC12_C1 {D_2D = 0}
+    VDCC12_C2 {D_2D = 0}
+    VDCC12_C3 {D_2D = 0}
+    VDCC12_O  {D_2D = 0}
+
+    VDCC13_C0 {D_2D = 0}
+    VDCC13_C1 {D_2D = 0}
+    VDCC13_C2 {D_2D = 0}
+    VDCC13_C3 {D_2D = 0}
+    VDCC13_O  {D_2D = 0}
+
+    VDCC14_C0 {D_2D = 0}
+    VDCC14_C1 {D_2D = 0}
+    VDCC14_C2 {D_2D = 0}
+    VDCC14_C3 {D_2D = 0}
+    VDCC14_O  {D_2D = 0}
+
+    VDCC15_C0 {D_2D = 0}
+    VDCC15_C1 {D_2D = 0}
+    VDCC15_C2 {D_2D = 0}
+    VDCC15_C3 {D_2D = 0}
+    VDCC15_O  {D_2D = 0}
+
+    VDCC16_C0 {D_2D = 0}
+    VDCC16_C1 {D_2D = 0}
+    VDCC16_C2 {D_2D = 0}
+    VDCC16_C3 {D_2D = 0}
+    VDCC16_O  {D_2D = 0}
+
+    VDCC17_C0 {D_2D = 0}
+    VDCC17_C1 {D_2D = 0}
+    VDCC17_C2 {D_2D = 0}
+    VDCC17_C3 {D_2D = 0}
+    VDCC17_O  {D_2D = 0}
+
+    VDCC18_C0 {D_2D = 0}
+    VDCC18_C1 {D_2D = 0}
+    VDCC18_C2 {D_2D = 0}
+    VDCC18_C3 {D_2D = 0}
+    VDCC18_O  {D_2D = 0}
+
+    VDCC19_C0 {D_2D = 0}
+    VDCC19_C1 {D_2D = 0}
+    VDCC19_C2 {D_2D = 0}
+    VDCC19_C3 {D_2D = 0}
+    VDCC19_O  {D_2D = 0}
+
+    VDCC20_C0 {D_2D = 0}
+    VDCC20_C1 {D_2D = 0}
+    VDCC20_C2 {D_2D = 0}
+    VDCC20_C3 {D_2D = 0}
+    VDCC20_O  {D_2D = 0}
+
+    VDCC21_C0 {D_2D = 0}
+    VDCC21_C1 {D_2D = 0}
+    VDCC21_C2 {D_2D = 0}
+    VDCC21_C3 {D_2D = 0}
+    VDCC21_O  {D_2D = 0}
+
+    VDCC22_C0 {D_2D = 0}
+    VDCC22_C1 {D_2D = 0}
+    VDCC22_C2 {D_2D = 0}
+    VDCC22_C3 {D_2D = 0}
+    VDCC22_O  {D_2D = 0}
+
+    VDCC23_C0 {D_2D = 0}
+    VDCC23_C1 {D_2D = 0}
+    VDCC23_C2 {D_2D = 0}
+    VDCC23_C3 {D_2D = 0}
+    VDCC23_O  {D_2D = 0}
+
+    VDCC24_C0 {D_2D = 0}
+    VDCC24_C1 {D_2D = 0}
+    VDCC24_C2 {D_2D = 0}
+    VDCC24_C3 {D_2D = 0}
+    VDCC24_O  {D_2D = 0}
+
+    VDCC25_C0 {D_2D = 0}
+    VDCC25_C1 {D_2D = 0}
+    VDCC25_C2 {D_2D = 0}
+    VDCC25_C3 {D_2D = 0}
+    VDCC25_O  {D_2D = 0}
+
+    VDCC26_C0 {D_2D = 0}
+    VDCC26_C1 {D_2D = 0}
+    VDCC26_C2 {D_2D = 0}
+    VDCC26_C3 {D_2D = 0}
+    VDCC26_O  {D_2D = 0}
+
+    VDCC27_C0 {D_2D = 0}
+    VDCC27_C1 {D_2D = 0}
+    VDCC27_C2 {D_2D = 0}
+    VDCC27_C3 {D_2D = 0}
+    VDCC27_O  {D_2D = 0}
+
+    VDCC28_C0 {D_2D = 0}
+    VDCC28_C1 {D_2D = 0}
+    VDCC28_C2 {D_2D = 0}
+    VDCC28_C3 {D_2D = 0}
+    VDCC28_O  {D_2D = 0}
+
+    VDCC29_C0 {D_2D = 0}
+    VDCC29_C1 {D_2D = 0}
+    VDCC29_C2 {D_2D = 0}
+    VDCC29_C3 {D_2D = 0}
+    VDCC29_O  {D_2D = 0}
+
+    VDCC30_C0 {D_2D = 0}
+    VDCC30_C1 {D_2D = 0}
+    VDCC30_C2 {D_2D = 0}
+    VDCC30_C3 {D_2D = 0}
+    VDCC30_O  {D_2D = 0}
+
+    VDCC31_C0 {D_2D = 0}
+    VDCC31_C1 {D_2D = 0}
+    VDCC31_C2 {D_2D = 0}
+    VDCC31_C3 {D_2D = 0}
+    VDCC31_O  {D_2D = 0}
+
+    VDCC32_C0 {D_2D = 0}
+    VDCC32_C1 {D_2D = 0}
+    VDCC32_C2 {D_2D = 0}
+    VDCC32_C3 {D_2D = 0}
+    VDCC32_O  {D_2D = 0}
+
+    VDCC33_C0 {D_2D = 0}
+    VDCC33_C1 {D_2D = 0}
+    VDCC33_C2 {D_2D = 0}
+    VDCC33_C3 {D_2D = 0}
+    VDCC33_O  {D_2D = 0}
+
+    VDCC34_C0 {D_2D = 0}
+    VDCC34_C1 {D_2D = 0}
+    VDCC34_C2 {D_2D = 0}
+    VDCC34_C3 {D_2D = 0}
+    VDCC34_O  {D_2D = 0}
+
+    VDCC35_C0 {D_2D = 0}
+    VDCC35_C1 {D_2D = 0}
+    VDCC35_C2 {D_2D = 0}
+    VDCC35_C3 {D_2D = 0}
+    VDCC35_O  {D_2D = 0}
+}
+
+DEFINE_REACTIONS {
+    /* P/Q-type Voltage Dependent Calcium Channels */
+    /* From Bischoffberger et al., 2002, Neuroscience J.*/
+    VDCC1_C0' <-> VDCC1_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC1_C1' <-> VDCC1_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC1_C2' <-> VDCC1_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC1_C3' <-> VDCC1_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC1_O'   -> VDCC1_O' + Ca1,   [k_VDCC_Ca]
+
+    VDCC2_C0' <-> VDCC2_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC2_C1' <-> VDCC2_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC2_C2' <-> VDCC2_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC2_C3' <-> VDCC2_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC2_O'   -> VDCC2_O' + Ca2,   [k_VDCC_Ca]
+
+    VDCC3_C0' <-> VDCC3_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC3_C1' <-> VDCC3_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC3_C2' <-> VDCC3_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC3_C3' <-> VDCC3_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC3_O'   -> VDCC3_O' + Ca3,   [k_VDCC_Ca]
+
+    VDCC4_C0' <-> VDCC4_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC4_C1' <-> VDCC4_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC4_C2' <-> VDCC4_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC4_C3' <-> VDCC4_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC4_O'   -> VDCC4_O' + Ca4,   [k_VDCC_Ca]
+
+    VDCC5_C0' <-> VDCC5_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC5_C1' <-> VDCC5_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC5_C2' <-> VDCC5_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC5_C3' <-> VDCC5_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC5_O'   -> VDCC5_O' + Ca5,   [k_VDCC_Ca]
+
+    VDCC6_C0' <-> VDCC6_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC6_C1' <-> VDCC6_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC6_C2' <-> VDCC6_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC6_C3' <-> VDCC6_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC6_O'   -> VDCC6_O' + Ca6,   [k_VDCC_Ca]
+
+    VDCC7_C0' <-> VDCC7_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC7_C1' <-> VDCC7_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC7_C2' <-> VDCC7_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC7_C3' <-> VDCC7_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC7_O'   -> VDCC7_O' + Ca7,   [k_VDCC_Ca]
+
+    VDCC8_C0' <-> VDCC8_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC8_C1' <-> VDCC8_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC8_C2' <-> VDCC8_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC8_C3' <-> VDCC8_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC8_O'   -> VDCC8_O' + Ca8,   [k_VDCC_Ca]
+
+    VDCC9_C0' <-> VDCC9_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC9_C1' <-> VDCC9_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC9_C2' <-> VDCC9_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC9_C3' <-> VDCC9_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC9_O'   -> VDCC9_O' + Ca9,   [k_VDCC_Ca]
+
+    VDCC10_C0' <-> VDCC10_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC10_C1' <-> VDCC10_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC10_C2' <-> VDCC10_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC10_C3' <-> VDCC10_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC10_O'   -> VDCC10_O' + Ca10,  [k_VDCC_Ca]
+
+    VDCC11_C0' <-> VDCC11_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC11_C1' <-> VDCC11_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC11_C2' <-> VDCC11_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC11_C3' <-> VDCC11_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC11_O'   -> VDCC11_O' + Ca11,  [k_VDCC_Ca]
+
+    VDCC12_C0' <-> VDCC12_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC12_C1' <-> VDCC12_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC12_C2' <-> VDCC12_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC12_C3' <-> VDCC12_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC12_O'   -> VDCC12_O' + Ca12,  [k_VDCC_Ca]
+
+    VDCC13_C0' <-> VDCC13_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC13_C1' <-> VDCC13_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC13_C2' <-> VDCC13_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC13_C3' <-> VDCC13_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC13_O'   -> VDCC13_O' + Ca13,  [k_VDCC_Ca]
+
+    VDCC14_C0' <-> VDCC14_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC14_C1' <-> VDCC14_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC14_C2' <-> VDCC14_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC14_C3' <-> VDCC14_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC14_O'   -> VDCC14_O' + Ca14,  [k_VDCC_Ca]
+
+    VDCC15_C0' <-> VDCC15_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC15_C1' <-> VDCC15_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC15_C2' <-> VDCC15_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC15_C3' <-> VDCC15_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC15_O'   -> VDCC15_O' + Ca15,  [k_VDCC_Ca]
+
+    VDCC16_C0' <-> VDCC16_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC16_C1' <-> VDCC16_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC16_C2' <-> VDCC16_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC16_C3' <-> VDCC16_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC16_O'   -> VDCC16_O' + Ca16,  [k_VDCC_Ca]
+
+    VDCC17_C0' <-> VDCC17_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC17_C1' <-> VDCC17_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC17_C2' <-> VDCC17_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC17_C3' <-> VDCC17_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC17_O'   -> VDCC17_O' + Ca17,  [k_VDCC_Ca]
+
+    VDCC18_C0' <-> VDCC18_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC18_C1' <-> VDCC18_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC18_C2' <-> VDCC18_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC18_C3' <-> VDCC18_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC18_O'   -> VDCC18_O' + Ca18,  [k_VDCC_Ca]
+
+    VDCC19_C0' <-> VDCC19_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC19_C1' <-> VDCC19_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC19_C2' <-> VDCC19_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC19_C3' <-> VDCC19_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC19_O'   -> VDCC19_O' + Ca19,  [k_VDCC_Ca]
+
+    VDCC20_C0' <-> VDCC20_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC20_C1' <-> VDCC20_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC20_C2' <-> VDCC20_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC20_C3' <-> VDCC20_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC20_O'   -> VDCC20_O' + Ca20,  [k_VDCC_Ca]
+
+    VDCC21_C0' <-> VDCC21_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC21_C1' <-> VDCC21_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC21_C2' <-> VDCC21_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC21_C3' <-> VDCC21_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC21_O'   -> VDCC21_O' + Ca21,  [k_VDCC_Ca]
+
+    VDCC22_C0' <-> VDCC22_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC22_C1' <-> VDCC22_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC22_C2' <-> VDCC22_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC22_C3' <-> VDCC22_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC22_O'   -> VDCC22_O' + Ca22,  [k_VDCC_Ca]
+
+    VDCC23_C0' <-> VDCC23_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC23_C1' <-> VDCC23_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC23_C2' <-> VDCC23_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC23_C3' <-> VDCC23_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC23_O'   -> VDCC23_O' + Ca23,  [k_VDCC_Ca]
+
+    VDCC24_C0' <-> VDCC24_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC24_C1' <-> VDCC24_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC24_C2' <-> VDCC24_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC24_C3' <-> VDCC24_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC24_O'   -> VDCC24_O' + Ca24,  [k_VDCC_Ca]
+
+    VDCC25_C0' <-> VDCC25_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC25_C1' <-> VDCC25_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC25_C2' <-> VDCC25_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC25_C3' <-> VDCC25_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC25_O'   -> VDCC25_O' + Ca25,  [k_VDCC_Ca]
+
+    VDCC26_C0' <-> VDCC26_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC26_C1' <-> VDCC26_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC26_C2' <-> VDCC26_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC26_C3' <-> VDCC26_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC26_O'   -> VDCC26_O' + Ca26,  [k_VDCC_Ca]
+
+    VDCC27_C0' <-> VDCC27_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC27_C1' <-> VDCC27_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC27_C2' <-> VDCC27_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC27_C3' <-> VDCC27_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC27_O'   -> VDCC27_O' + Ca27,  [k_VDCC_Ca]
+
+    VDCC28_C0' <-> VDCC28_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC28_C1' <-> VDCC28_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC28_C2' <-> VDCC28_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC28_C3' <-> VDCC28_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC28_O'   -> VDCC28_O' + Ca28,  [k_VDCC_Ca]
+
+    VDCC29_C0' <-> VDCC29_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC29_C1' <-> VDCC29_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC29_C2' <-> VDCC29_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC29_C3' <-> VDCC29_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC29_O'   -> VDCC29_O' + Ca29,  [k_VDCC_Ca]
+
+    VDCC30_C0' <-> VDCC30_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC30_C1' <-> VDCC30_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC30_C2' <-> VDCC30_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC30_C3' <-> VDCC30_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC30_O'   -> VDCC30_O' + Ca30,  [k_VDCC_Ca]
+
+    VDCC31_C0' <-> VDCC31_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC31_C1' <-> VDCC31_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC31_C2' <-> VDCC31_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC31_C3' <-> VDCC31_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC31_O'   -> VDCC31_O' + Ca31,  [k_VDCC_Ca]
+
+    VDCC32_C0' <-> VDCC32_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC32_C1' <-> VDCC32_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC32_C2' <-> VDCC32_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC32_C3' <-> VDCC32_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC32_O'   -> VDCC32_O' + Ca32,  [k_VDCC_Ca]
+
+    VDCC33_C0' <-> VDCC33_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC33_C1' <-> VDCC33_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC33_C2' <-> VDCC33_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC33_C3' <-> VDCC33_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC33_O'   -> VDCC33_O' + Ca33,  [k_VDCC_Ca]
+
+    VDCC34_C0' <-> VDCC34_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC34_C1' <-> VDCC34_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC34_C2' <-> VDCC34_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC34_C3' <-> VDCC34_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC34_O'   -> VDCC34_O' + Ca34,  [k_VDCC_Ca]
+
+    VDCC35_C0' <-> VDCC35_C1'         [>k_VDCC_C01, <k_VDCC_C10]
+    VDCC35_C1' <-> VDCC35_C2'         [>k_VDCC_C12, <k_VDCC_C21]
+    VDCC35_C2' <-> VDCC35_C3'         [>k_VDCC_C23, <k_VDCC_C32]
+    VDCC35_C3' <-> VDCC35_O'          [>k_VDCC_C34, <k_VDCC_C43]
+    VDCC35_O'   -> VDCC35_O' + Ca35,  [k_VDCC_Ca]
+
+}
+
+/* VDCC clusters */
+vdcc_disk_file = "vdcc_disks/vdcc_disk_n" & nVDCC & "_d" & dVDCC & "_nAZ" & nAZ & ".mdl"
+INCLUDE_FILE = vdcc_disk_file
+
+
+INSTANTIATE VDCC OBJECT
+{
+    vdcc_disk OBJECT vdcc_disk {
+        TRANSLATE = [0, 0, -0.400]
+    }
+}

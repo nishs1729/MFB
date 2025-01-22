@@ -1,0 +1,1776 @@
+DEFINE_MOLECULES {
+    X0Y0d {DIFFUSION_CONSTANT_2D = 0} /* dummy vesicle */
+    X0Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X1Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X2Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X3Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X4Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X5Y0 {DIFFUSION_CONSTANT_2D = 0}
+    X0Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X1Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X2Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X3Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X4Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X5Y0e {DIFFUSION_CONSTANT_2D = 0}
+    X5Y0r {DIFFUSION_CONSTANT_2D = 0}
+    X0Y0r {DIFFUSION_CONSTANT_2D = 0}
+
+    X0Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X1Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X2Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X3Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X4Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X5Y1 {DIFFUSION_CONSTANT_2D = 0}
+    X0Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X1Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X2Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X3Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X4Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X5Y1e {DIFFUSION_CONSTANT_2D = 0}
+    X5Y1r {DIFFUSION_CONSTANT_2D = 0}
+
+    X0Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X1Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X2Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X3Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X4Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X5Y2 {DIFFUSION_CONSTANT_2D = 0}
+    X0Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X1Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X2Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X3Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X4Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X5Y2e {DIFFUSION_CONSTANT_2D = 0}
+    X0Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X1Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X2Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X3Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X4Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X5Y2r {DIFFUSION_CONSTANT_2D = 0}
+    X5Y2ar {DIFFUSION_CONSTANT_2D = 0}
+}
+
+x0 = 0.000  //um
+y0 = 0.001  //um
+xs = 0.010  //um
+az_x = 0.020 //um
+az_y = 0.016 //um
+DEFINE_COMPLEX_MOLECULE az_sudhof {
+    NUMBER_OF_SUBUNITS = [37]
+    SUBUNIT[1]  = X0Y0'
+    SUBUNIT[2]  = X0Y0'
+    SUBUNIT[3]  = X0Y0'
+    SUBUNIT[4]  = X0Y0'
+    SUBUNIT[5]  = X0Y0'
+    SUBUNIT[6]  = X0Y0'
+    SUBUNIT[7]  = X0Y0'
+    SUBUNIT[8]  = X0Y0'
+    SUBUNIT[9]  = X0Y0'
+    SUBUNIT[10] = X0Y0'
+    SUBUNIT[11] = X0Y0'
+    SUBUNIT[12] = X0Y0'
+    SUBUNIT[13] = X0Y0'
+    SUBUNIT[14] = X0Y0'
+    SUBUNIT[15] = X0Y0'
+    SUBUNIT[16] = X0Y0'
+    SUBUNIT[17] = X0Y0'
+    SUBUNIT[18] = X0Y0'
+    SUBUNIT[19] = X0Y0'
+    SUBUNIT[20] = X0Y0'
+    SUBUNIT[21] = X0Y0'
+    SUBUNIT[22] = X0Y0'
+    SUBUNIT[23] = X0Y0d'
+    SUBUNIT[24] = X0Y0d'
+    SUBUNIT[25] = X0Y0d'
+    SUBUNIT[26] = X0Y0d'
+    SUBUNIT[27] = X0Y0d'
+    SUBUNIT[28] = X0Y0d'
+    SUBUNIT[29] = X0Y0d'
+    SUBUNIT[30] = X0Y0d'
+    SUBUNIT[31] = X0Y0d'
+    SUBUNIT[32] = X0Y0d'
+    SUBUNIT[33] = X0Y0d'
+    SUBUNIT[34] = X0Y0d'
+    SUBUNIT[35] = X0Y0d'
+    SUBUNIT[36] = X0Y0d'
+    SUBUNIT[37] = X0Y0d'
+
+    SHAPE {
+        SUBUNIT[1]  = [x0,           y0,        0]    //1
+        SUBUNIT[2]  = [x0-az_x,      y0,        0]    //2
+        SUBUNIT[3]  = [x0+az_x,      y0,        0]    //3
+        SUBUNIT[4]  = [x0-xs,        y0+az_y,   0]    //4
+        SUBUNIT[5]  = [x0+xs,        y0-az_y,   0]    //5
+        SUBUNIT[6]  = [x0-xs,        y0-az_y,   0]    //6
+        SUBUNIT[7]  = [x0+xs,        y0+az_y,   0]    //7
+        SUBUNIT[8]  = [x0-2*az_x,    y0,        0]    //8
+        SUBUNIT[9]  = [x0+2*az_x,    y0,        0]    //9
+        SUBUNIT[10] = [x0-az_x-xs,   y0+az_y,   0]    //10
+        SUBUNIT[11] = [x0+az_x+xs,   y0-az_y,   0]    //11
+        SUBUNIT[12] = [x0+az_x+xs,   y0+az_y,   0]    //12
+        SUBUNIT[13] = [x0-az_x-xs,   y0-az_y,   0]    //13
+        SUBUNIT[14] = [x0,           y0+2*az_y, 0]    //14
+        SUBUNIT[15] = [x0,           y0-2*az_y, 0]    //15
+        SUBUNIT[16] = [x0-az_x,      y0+2*az_y, 0]    //16
+        SUBUNIT[17] = [x0+az_x,      y0-2*az_y, 0]    //17
+        SUBUNIT[18] = [x0-az_x,      y0-2*az_y, 0]    //18
+        SUBUNIT[19] = [x0+az_x,      y0+2*az_y, 0]    //19
+        SUBUNIT[20] = [x0-3*az_x,    y0,        0]    //20
+        SUBUNIT[21] = [x0+3*az_x,    y0,        0]    //21
+        SUBUNIT[22] = [x0-2*az_x-xs, y0+az_y,   0]    //22
+        SUBUNIT[23] = [x0+2*az_x+xs, y0-az_y,   0]    //23
+        SUBUNIT[24] = [x0-2*az_x-xs, y0-az_y,   0]    //24
+        SUBUNIT[25] = [x0+2*az_x+xs, y0+az_y,   0]    //25
+        SUBUNIT[26] = [x0-2*az_x,    y0+2*az_y, 0]    //26
+        SUBUNIT[27] = [x0+2*az_x,    y0-2*az_y, 0]    //27
+        SUBUNIT[28] = [x0-2*az_x,    y0-2*az_y, 0]    //28
+        SUBUNIT[29] = [x0+2*az_x,    y0+2*az_y, 0]    //29
+        SUBUNIT[30] = [x0-az_x-xs,   y0+3*az_y, 0]    //30
+        SUBUNIT[31] = [x0+az_x+xs,   y0-3*az_y, 0]    //31
+        SUBUNIT[32] = [x0-xs,        y0+3*az_y, 0]    //32
+        SUBUNIT[33] = [x0+xs,        y0-3*az_y, 0]    //33
+        SUBUNIT[34] = [x0-az_x-xs,   y0-3*az_y, 0]    //34
+        SUBUNIT[35] = [x0+az_x+xs,   y0+3*az_y, 0]    //35
+        SUBUNIT[36] = [x0-xs,        y0-3*az_y, 0]    //36
+        SUBUNIT[37] = [x0+xs,        y0+3*az_y, 0]    //37
+    }
+    SUBUNIT_RELATIONSHIPS {
+        azp1 = [ +1 ]
+        azp2 = [ +2 ]
+        azp3 = [ +3 ]
+        azp4 = [ +4 ]
+        azp5 = [ +5 ]
+        azp6 = [ +6 ]
+        azp7 = [ +7 ]
+        azp8 = [ +8 ]
+        azp9 = [ +9 ]
+        azp10 = [ +10 ]
+        azp11 = [ +11 ]
+        azp12 = [ +12 ]
+        azp13 = [ +13 ]
+        azp14 = [ +14 ]
+        azp15 = [ +15 ]
+        azp16 = [ +16 ]
+        azp17 = [ +17 ]
+        azp18 = [ +18 ]
+        azp19 = [ +19 ]
+        azp20 = [ +20 ]
+        azp21 = [ +21 ]
+        azp22 = [ +22 ]
+        azp23 = [ +23 ]
+        azp24 = [ +24 ]
+        azp25 = [ +25 ]
+        azp26 = [ +26 ]
+        azp27 = [ +27 ]
+        azp28 = [ +28 ]
+        azp29 = [ +29 ]
+        azp30 = [ +30 ]
+        azp31 = [ +31 ]
+        azp32 = [ +32 ]
+        azp33 = [ +33 ]
+        azp34 = [ +34 ]
+        azp35 = [ +35 ]
+        azp36 = [ +36 ]
+    }
+    RATE_RULES {
+        release_vesicle_sync {
+            azp1 == X5Y0r' : 0
+            azp1 == X5Y1r' : 0
+            azp1 == X5Y2r' : 0
+            azp1 == X0Y2r' : 0
+            azp1 == X1Y2r' : 0
+            azp1 == X2Y2r' : 0
+            azp1 == X3Y2r' : 0
+            azp1 == X4Y2r' : 0
+            azp1 == X5Y2ar' : 0
+            azp1 == X0Y0r' : 0
+
+            azp2 == X5Y0r' : 0
+            azp2 == X5Y1r' : 0
+            azp2 == X5Y2r' : 0
+            azp2 == X0Y2r' : 0
+            azp2 == X1Y2r' : 0
+            azp2 == X2Y2r' : 0
+            azp2 == X3Y2r' : 0
+            azp2 == X4Y2r' : 0
+            azp2 == X5Y2ar' : 0
+            azp2 == X0Y0r' : 0
+
+            azp3 == X5Y0r' : 0
+            azp3 == X5Y1r' : 0
+            azp3 == X5Y2r' : 0
+            azp3 == X0Y2r' : 0
+            azp3 == X1Y2r' : 0
+            azp3 == X2Y2r' : 0
+            azp3 == X3Y2r' : 0
+            azp3 == X4Y2r' : 0
+            azp3 == X5Y2ar' : 0
+            azp3 == X0Y0r' : 0
+
+            azp4 == X5Y0r' : 0
+            azp4 == X5Y1r' : 0
+            azp4 == X5Y2r' : 0
+            azp4 == X0Y2r' : 0
+            azp4 == X1Y2r' : 0
+            azp4 == X2Y2r' : 0
+            azp4 == X3Y2r' : 0
+            azp4 == X4Y2r' : 0
+            azp4 == X5Y2ar' : 0
+            azp4 == X0Y0r' : 0
+
+            azp5 == X5Y0r' : 0
+            azp5 == X5Y1r' : 0
+            azp5 == X5Y2r' : 0
+            azp5 == X0Y2r' : 0
+            azp5 == X1Y2r' : 0
+            azp5 == X2Y2r' : 0
+            azp5 == X3Y2r' : 0
+            azp5 == X4Y2r' : 0
+            azp5 == X5Y2ar' : 0
+            azp5 == X0Y0r' : 0
+
+            azp6 == X5Y0r' : 0
+            azp6 == X5Y1r' : 0
+            azp6 == X5Y2r' : 0
+            azp6 == X0Y2r' : 0
+            azp6 == X1Y2r' : 0
+            azp6 == X2Y2r' : 0
+            azp6 == X3Y2r' : 0
+            azp6 == X4Y2r' : 0
+            azp6 == X5Y2ar' : 0
+            azp6 == X0Y0r' : 0
+
+            azp7 == X5Y0r' : 0
+            azp7 == X5Y1r' : 0
+            azp7 == X5Y2r' : 0
+            azp7 == X0Y2r' : 0
+            azp7 == X1Y2r' : 0
+            azp7 == X2Y2r' : 0
+            azp7 == X3Y2r' : 0
+            azp7 == X4Y2r' : 0
+            azp7 == X5Y2ar' : 0
+            azp7 == X0Y0r' : 0
+
+            azp8 == X5Y0r' : 0
+            azp8 == X5Y1r' : 0
+            azp8 == X5Y2r' : 0
+            azp8 == X0Y2r' : 0
+            azp8 == X1Y2r' : 0
+            azp8 == X2Y2r' : 0
+            azp8 == X3Y2r' : 0
+            azp8 == X4Y2r' : 0
+            azp8 == X5Y2ar' : 0
+            azp8 == X0Y0r' : 0
+
+            azp9 == X5Y0r' : 0
+            azp9 == X5Y1r' : 0
+            azp9 == X5Y2r' : 0
+            azp9 == X0Y2r' : 0
+            azp9 == X1Y2r' : 0
+            azp9 == X2Y2r' : 0
+            azp9 == X3Y2r' : 0
+            azp9 == X4Y2r' : 0
+            azp9 == X5Y2ar' : 0
+            azp9 == X0Y0r' : 0
+
+            azp10 == X5Y0r' : 0
+            azp10 == X5Y1r' : 0
+            azp10 == X5Y2r' : 0
+            azp10 == X0Y2r' : 0
+            azp10 == X1Y2r' : 0
+            azp10 == X2Y2r' : 0
+            azp10 == X3Y2r' : 0
+            azp10 == X4Y2r' : 0
+            azp10 == X5Y2ar' : 0
+            azp10 == X0Y0r' : 0
+
+            azp11 == X5Y0r' : 0
+            azp11 == X5Y1r' : 0
+            azp11 == X5Y2r' : 0
+            azp11 == X0Y2r' : 0
+            azp11 == X1Y2r' : 0
+            azp11 == X2Y2r' : 0
+            azp11 == X3Y2r' : 0
+            azp11 == X4Y2r' : 0
+            azp11 == X5Y2ar' : 0
+            azp11 == X0Y0r' : 0
+
+            azp12 == X5Y0r' : 0
+            azp12 == X5Y1r' : 0
+            azp12 == X5Y2r' : 0
+            azp12 == X0Y2r' : 0
+            azp12 == X1Y2r' : 0
+            azp12 == X2Y2r' : 0
+            azp12 == X3Y2r' : 0
+            azp12 == X4Y2r' : 0
+            azp12 == X5Y2ar' : 0
+            azp12 == X0Y0r' : 0
+
+            azp13 == X5Y0r' : 0
+            azp13 == X5Y1r' : 0
+            azp13 == X5Y2r' : 0
+            azp13 == X0Y2r' : 0
+            azp13 == X1Y2r' : 0
+            azp13 == X2Y2r' : 0
+            azp13 == X3Y2r' : 0
+            azp13 == X4Y2r' : 0
+            azp13 == X5Y2ar' : 0
+            azp13 == X0Y0r' : 0
+
+            azp14 == X5Y0r' : 0
+            azp14 == X5Y1r' : 0
+            azp14 == X5Y2r' : 0
+            azp14 == X0Y2r' : 0
+            azp14 == X1Y2r' : 0
+            azp14 == X2Y2r' : 0
+            azp14 == X3Y2r' : 0
+            azp14 == X4Y2r' : 0
+            azp14 == X5Y2ar' : 0
+            azp14 == X0Y0r' : 0
+
+            azp15 == X5Y0r' : 0
+            azp15 == X5Y1r' : 0
+            azp15 == X5Y2r' : 0
+            azp15 == X0Y2r' : 0
+            azp15 == X1Y2r' : 0
+            azp15 == X2Y2r' : 0
+            azp15 == X3Y2r' : 0
+            azp15 == X4Y2r' : 0
+            azp15 == X5Y2ar' : 0
+            azp15 == X0Y0r' : 0
+
+            azp16 == X5Y0r' : 0
+            azp16 == X5Y1r' : 0
+            azp16 == X5Y2r' : 0
+            azp16 == X0Y2r' : 0
+            azp16 == X1Y2r' : 0
+            azp16 == X2Y2r' : 0
+            azp16 == X3Y2r' : 0
+            azp16 == X4Y2r' : 0
+            azp16 == X5Y2ar' : 0
+            azp16 == X0Y0r' : 0
+
+            azp17 == X5Y0r' : 0
+            azp17 == X5Y1r' : 0
+            azp17 == X5Y2r' : 0
+            azp17 == X0Y2r' : 0
+            azp17 == X1Y2r' : 0
+            azp17 == X2Y2r' : 0
+            azp17 == X3Y2r' : 0
+            azp17 == X4Y2r' : 0
+            azp17 == X5Y2ar' : 0
+            azp17 == X0Y0r' : 0
+
+            azp18 == X5Y0r' : 0
+            azp18 == X5Y1r' : 0
+            azp18 == X5Y2r' : 0
+            azp18 == X0Y2r' : 0
+            azp18 == X1Y2r' : 0
+            azp18 == X2Y2r' : 0
+            azp18 == X3Y2r' : 0
+            azp18 == X4Y2r' : 0
+            azp18 == X5Y2ar' : 0
+            azp18 == X0Y0r' : 0
+
+            azp19 == X5Y0r' : 0
+            azp19 == X5Y1r' : 0
+            azp19 == X5Y2r' : 0
+            azp19 == X0Y2r' : 0
+            azp19 == X1Y2r' : 0
+            azp19 == X2Y2r' : 0
+            azp19 == X3Y2r' : 0
+            azp19 == X4Y2r' : 0
+            azp19 == X5Y2ar' : 0
+            azp19 == X0Y0r' : 0
+
+            azp20 == X5Y0r' : 0
+            azp20 == X5Y1r' : 0
+            azp20 == X5Y2r' : 0
+            azp20 == X0Y2r' : 0
+            azp20 == X1Y2r' : 0
+            azp20 == X2Y2r' : 0
+            azp20 == X3Y2r' : 0
+            azp20 == X4Y2r' : 0
+            azp20 == X5Y2ar' : 0
+            azp20 == X0Y0r' : 0
+
+            azp21 == X5Y0r' : 0
+            azp21 == X5Y1r' : 0
+            azp21 == X5Y2r' : 0
+            azp21 == X0Y2r' : 0
+            azp21 == X1Y2r' : 0
+            azp21 == X2Y2r' : 0
+            azp21 == X3Y2r' : 0
+            azp21 == X4Y2r' : 0
+            azp21 == X5Y2ar' : 0
+            azp21 == X0Y0r' : 0
+
+            azp22 == X5Y0r' : 0
+            azp22 == X5Y1r' : 0
+            azp22 == X5Y2r' : 0
+            azp22 == X0Y2r' : 0
+            azp22 == X1Y2r' : 0
+            azp22 == X2Y2r' : 0
+            azp22 == X3Y2r' : 0
+            azp22 == X4Y2r' : 0
+            azp22 == X5Y2ar' : 0
+            azp22 == X0Y0r' : 0
+
+            azp23 == X5Y0r' : 0
+            azp23 == X5Y1r' : 0
+            azp23 == X5Y2r' : 0
+            azp23 == X0Y2r' : 0
+            azp23 == X1Y2r' : 0
+            azp23 == X2Y2r' : 0
+            azp23 == X3Y2r' : 0
+            azp23 == X4Y2r' : 0
+            azp23 == X5Y2ar' : 0
+            azp23 == X0Y0r' : 0
+
+            azp24 == X5Y0r' : 0
+            azp24 == X5Y1r' : 0
+            azp24 == X5Y2r' : 0
+            azp24 == X0Y2r' : 0
+            azp24 == X1Y2r' : 0
+            azp24 == X2Y2r' : 0
+            azp24 == X3Y2r' : 0
+            azp24 == X4Y2r' : 0
+            azp24 == X5Y2ar' : 0
+            azp24 == X0Y0r' : 0
+
+            azp25 == X5Y0r' : 0
+            azp25 == X5Y1r' : 0
+            azp25 == X5Y2r' : 0
+            azp25 == X0Y2r' : 0
+            azp25 == X1Y2r' : 0
+            azp25 == X2Y2r' : 0
+            azp25 == X3Y2r' : 0
+            azp25 == X4Y2r' : 0
+            azp25 == X5Y2ar' : 0
+            azp25 == X0Y0r' : 0
+
+            azp26 == X5Y0r' : 0
+            azp26 == X5Y1r' : 0
+            azp26 == X5Y2r' : 0
+            azp26 == X0Y2r' : 0
+            azp26 == X1Y2r' : 0
+            azp26 == X2Y2r' : 0
+            azp26 == X3Y2r' : 0
+            azp26 == X4Y2r' : 0
+            azp26 == X5Y2ar' : 0
+            azp26 == X0Y0r' : 0
+
+            azp27 == X5Y0r' : 0
+            azp27 == X5Y1r' : 0
+            azp27 == X5Y2r' : 0
+            azp27 == X0Y2r' : 0
+            azp27 == X1Y2r' : 0
+            azp27 == X2Y2r' : 0
+            azp27 == X3Y2r' : 0
+            azp27 == X4Y2r' : 0
+            azp27 == X5Y2ar' : 0
+            azp27 == X0Y0r' : 0
+
+            azp28 == X5Y0r' : 0
+            azp28 == X5Y1r' : 0
+            azp28 == X5Y2r' : 0
+            azp28 == X0Y2r' : 0
+            azp28 == X1Y2r' : 0
+            azp28 == X2Y2r' : 0
+            azp28 == X3Y2r' : 0
+            azp28 == X4Y2r' : 0
+            azp28 == X5Y2ar' : 0
+            azp28 == X0Y0r' : 0
+
+            azp29 == X5Y0r' : 0
+            azp29 == X5Y1r' : 0
+            azp29 == X5Y2r' : 0
+            azp29 == X0Y2r' : 0
+            azp29 == X1Y2r' : 0
+            azp29 == X2Y2r' : 0
+            azp29 == X3Y2r' : 0
+            azp29 == X4Y2r' : 0
+            azp29 == X5Y2ar' : 0
+            azp29 == X0Y0r' : 0
+
+            azp30 == X5Y0r' : 0
+            azp30 == X5Y1r' : 0
+            azp30 == X5Y2r' : 0
+            azp30 == X0Y2r' : 0
+            azp30 == X1Y2r' : 0
+            azp30 == X2Y2r' : 0
+            azp30 == X3Y2r' : 0
+            azp30 == X4Y2r' : 0
+            azp30 == X5Y2ar' : 0
+            azp30 == X0Y0r' : 0
+
+            azp31 == X5Y0r' : 0
+            azp31 == X5Y1r' : 0
+            azp31 == X5Y2r' : 0
+            azp31 == X0Y2r' : 0
+            azp31 == X1Y2r' : 0
+            azp31 == X2Y2r' : 0
+            azp31 == X3Y2r' : 0
+            azp31 == X4Y2r' : 0
+            azp31 == X5Y2ar' : 0
+            azp31 == X0Y0r' : 0
+
+            azp32 == X5Y0r' : 0
+            azp32 == X5Y1r' : 0
+            azp32 == X5Y2r' : 0
+            azp32 == X0Y2r' : 0
+            azp32 == X1Y2r' : 0
+            azp32 == X2Y2r' : 0
+            azp32 == X3Y2r' : 0
+            azp32 == X4Y2r' : 0
+            azp32 == X5Y2ar' : 0
+            azp32 == X0Y0r' : 0
+
+            azp33 == X5Y0r' : 0
+            azp33 == X5Y1r' : 0
+            azp33 == X5Y2r' : 0
+            azp33 == X0Y2r' : 0
+            azp33 == X1Y2r' : 0
+            azp33 == X2Y2r' : 0
+            azp33 == X3Y2r' : 0
+            azp33 == X4Y2r' : 0
+            azp33 == X5Y2ar' : 0
+            azp33 == X0Y0r' : 0
+
+            azp34 == X5Y0r' : 0
+            azp34 == X5Y1r' : 0
+            azp34 == X5Y2r' : 0
+            azp34 == X0Y2r' : 0
+            azp34 == X1Y2r' : 0
+            azp34 == X2Y2r' : 0
+            azp34 == X3Y2r' : 0
+            azp34 == X4Y2r' : 0
+            azp34 == X5Y2ar' : 0
+            azp34 == X0Y0r' : 0
+
+            azp35 == X5Y0r' : 0
+            azp35 == X5Y1r' : 0
+            azp35 == X5Y2r' : 0
+            azp35 == X0Y2r' : 0
+            azp35 == X1Y2r' : 0
+            azp35 == X2Y2r' : 0
+            azp35 == X3Y2r' : 0
+            azp35 == X4Y2r' : 0
+            azp35 == X5Y2ar' : 0
+            azp35 == X0Y0r' : 0
+
+            azp36 == X5Y0r' : 0
+            azp36 == X5Y1r' : 0
+            azp36 == X5Y2r' : 0
+            azp36 == X0Y2r' : 0
+            azp36 == X1Y2r' : 0
+            azp36 == X2Y2r' : 0
+            azp36 == X3Y2r' : 0
+            azp36 == X4Y2r' : 0
+            azp36 == X5Y2ar' : 0
+            azp36 == X0Y0r' : 0
+
+            DEFAULT : fusion_rate_sync_sudhof
+        }
+
+        release_vesicle_sync_facilitated {
+            azp1 == X5Y0r' : 0
+            azp1 == X5Y1r' : 0
+            azp1 == X5Y2r' : 0
+            azp1 == X0Y2r' : 0
+            azp1 == X1Y2r' : 0
+            azp1 == X2Y2r' : 0
+            azp1 == X3Y2r' : 0
+            azp1 == X4Y2r' : 0
+            azp1 == X5Y2ar' : 0
+            azp1 == X0Y0r' : 0
+
+            azp2 == X5Y0r' : 0
+            azp2 == X5Y1r' : 0
+            azp2 == X5Y2r' : 0
+            azp2 == X0Y2r' : 0
+            azp2 == X1Y2r' : 0
+            azp2 == X2Y2r' : 0
+            azp2 == X3Y2r' : 0
+            azp2 == X4Y2r' : 0
+            azp2 == X5Y2ar' : 0
+            azp2 == X0Y0r' : 0
+
+            azp3 == X5Y0r' : 0
+            azp3 == X5Y1r' : 0
+            azp3 == X5Y2r' : 0
+            azp3 == X0Y2r' : 0
+            azp3 == X1Y2r' : 0
+            azp3 == X2Y2r' : 0
+            azp3 == X3Y2r' : 0
+            azp3 == X4Y2r' : 0
+            azp3 == X5Y2ar' : 0
+            azp3 == X0Y0r' : 0
+
+            azp4 == X5Y0r' : 0
+            azp4 == X5Y1r' : 0
+            azp4 == X5Y2r' : 0
+            azp4 == X0Y2r' : 0
+            azp4 == X1Y2r' : 0
+            azp4 == X2Y2r' : 0
+            azp4 == X3Y2r' : 0
+            azp4 == X4Y2r' : 0
+            azp4 == X5Y2ar' : 0
+            azp4 == X0Y0r' : 0
+
+            azp5 == X5Y0r' : 0
+            azp5 == X5Y1r' : 0
+            azp5 == X5Y2r' : 0
+            azp5 == X0Y2r' : 0
+            azp5 == X1Y2r' : 0
+            azp5 == X2Y2r' : 0
+            azp5 == X3Y2r' : 0
+            azp5 == X4Y2r' : 0
+            azp5 == X5Y2ar' : 0
+            azp5 == X0Y0r' : 0
+
+            azp6 == X5Y0r' : 0
+            azp6 == X5Y1r' : 0
+            azp6 == X5Y2r' : 0
+            azp6 == X0Y2r' : 0
+            azp6 == X1Y2r' : 0
+            azp6 == X2Y2r' : 0
+            azp6 == X3Y2r' : 0
+            azp6 == X4Y2r' : 0
+            azp6 == X5Y2ar' : 0
+            azp6 == X0Y0r' : 0
+
+            azp7 == X5Y0r' : 0
+            azp7 == X5Y1r' : 0
+            azp7 == X5Y2r' : 0
+            azp7 == X0Y2r' : 0
+            azp7 == X1Y2r' : 0
+            azp7 == X2Y2r' : 0
+            azp7 == X3Y2r' : 0
+            azp7 == X4Y2r' : 0
+            azp7 == X5Y2ar' : 0
+            azp7 == X0Y0r' : 0
+
+            azp8 == X5Y0r' : 0
+            azp8 == X5Y1r' : 0
+            azp8 == X5Y2r' : 0
+            azp8 == X0Y2r' : 0
+            azp8 == X1Y2r' : 0
+            azp8 == X2Y2r' : 0
+            azp8 == X3Y2r' : 0
+            azp8 == X4Y2r' : 0
+            azp8 == X5Y2ar' : 0
+            azp8 == X0Y0r' : 0
+
+            azp9 == X5Y0r' : 0
+            azp9 == X5Y1r' : 0
+            azp9 == X5Y2r' : 0
+            azp9 == X0Y2r' : 0
+            azp9 == X1Y2r' : 0
+            azp9 == X2Y2r' : 0
+            azp9 == X3Y2r' : 0
+            azp9 == X4Y2r' : 0
+            azp9 == X5Y2ar' : 0
+            azp9 == X0Y0r' : 0
+
+            azp10 == X5Y0r' : 0
+            azp10 == X5Y1r' : 0
+            azp10 == X5Y2r' : 0
+            azp10 == X0Y2r' : 0
+            azp10 == X1Y2r' : 0
+            azp10 == X2Y2r' : 0
+            azp10 == X3Y2r' : 0
+            azp10 == X4Y2r' : 0
+            azp10 == X5Y2ar' : 0
+            azp10 == X0Y0r' : 0
+
+            azp11 == X5Y0r' : 0
+            azp11 == X5Y1r' : 0
+            azp11 == X5Y2r' : 0
+            azp11 == X0Y2r' : 0
+            azp11 == X1Y2r' : 0
+            azp11 == X2Y2r' : 0
+            azp11 == X3Y2r' : 0
+            azp11 == X4Y2r' : 0
+            azp11 == X5Y2ar' : 0
+            azp11 == X0Y0r' : 0
+
+            azp12 == X5Y0r' : 0
+            azp12 == X5Y1r' : 0
+            azp12 == X5Y2r' : 0
+            azp12 == X0Y2r' : 0
+            azp12 == X1Y2r' : 0
+            azp12 == X2Y2r' : 0
+            azp12 == X3Y2r' : 0
+            azp12 == X4Y2r' : 0
+            azp12 == X5Y2ar' : 0
+            azp12 == X0Y0r' : 0
+
+            azp13 == X5Y0r' : 0
+            azp13 == X5Y1r' : 0
+            azp13 == X5Y2r' : 0
+            azp13 == X0Y2r' : 0
+            azp13 == X1Y2r' : 0
+            azp13 == X2Y2r' : 0
+            azp13 == X3Y2r' : 0
+            azp13 == X4Y2r' : 0
+            azp13 == X5Y2ar' : 0
+            azp13 == X0Y0r' : 0
+
+            azp14 == X5Y0r' : 0
+            azp14 == X5Y1r' : 0
+            azp14 == X5Y2r' : 0
+            azp14 == X0Y2r' : 0
+            azp14 == X1Y2r' : 0
+            azp14 == X2Y2r' : 0
+            azp14 == X3Y2r' : 0
+            azp14 == X4Y2r' : 0
+            azp14 == X5Y2ar' : 0
+            azp14 == X0Y0r' : 0
+
+            azp15 == X5Y0r' : 0
+            azp15 == X5Y1r' : 0
+            azp15 == X5Y2r' : 0
+            azp15 == X0Y2r' : 0
+            azp15 == X1Y2r' : 0
+            azp15 == X2Y2r' : 0
+            azp15 == X3Y2r' : 0
+            azp15 == X4Y2r' : 0
+            azp15 == X5Y2ar' : 0
+            azp15 == X0Y0r' : 0
+
+            azp16 == X5Y0r' : 0
+            azp16 == X5Y1r' : 0
+            azp16 == X5Y2r' : 0
+            azp16 == X0Y2r' : 0
+            azp16 == X1Y2r' : 0
+            azp16 == X2Y2r' : 0
+            azp16 == X3Y2r' : 0
+            azp16 == X4Y2r' : 0
+            azp16 == X5Y2ar' : 0
+            azp16 == X0Y0r' : 0
+
+            azp17 == X5Y0r' : 0
+            azp17 == X5Y1r' : 0
+            azp17 == X5Y2r' : 0
+            azp17 == X0Y2r' : 0
+            azp17 == X1Y2r' : 0
+            azp17 == X2Y2r' : 0
+            azp17 == X3Y2r' : 0
+            azp17 == X4Y2r' : 0
+            azp17 == X5Y2ar' : 0
+            azp17 == X0Y0r' : 0
+
+            azp18 == X5Y0r' : 0
+            azp18 == X5Y1r' : 0
+            azp18 == X5Y2r' : 0
+            azp18 == X0Y2r' : 0
+            azp18 == X1Y2r' : 0
+            azp18 == X2Y2r' : 0
+            azp18 == X3Y2r' : 0
+            azp18 == X4Y2r' : 0
+            azp18 == X5Y2ar' : 0
+            azp18 == X0Y0r' : 0
+
+            azp19 == X5Y0r' : 0
+            azp19 == X5Y1r' : 0
+            azp19 == X5Y2r' : 0
+            azp19 == X0Y2r' : 0
+            azp19 == X1Y2r' : 0
+            azp19 == X2Y2r' : 0
+            azp19 == X3Y2r' : 0
+            azp19 == X4Y2r' : 0
+            azp19 == X5Y2ar' : 0
+            azp19 == X0Y0r' : 0
+
+            azp20 == X5Y0r' : 0
+            azp20 == X5Y1r' : 0
+            azp20 == X5Y2r' : 0
+            azp20 == X0Y2r' : 0
+            azp20 == X1Y2r' : 0
+            azp20 == X2Y2r' : 0
+            azp20 == X3Y2r' : 0
+            azp20 == X4Y2r' : 0
+            azp20 == X5Y2ar' : 0
+            azp20 == X0Y0r' : 0
+
+            azp21 == X5Y0r' : 0
+            azp21 == X5Y1r' : 0
+            azp21 == X5Y2r' : 0
+            azp21 == X0Y2r' : 0
+            azp21 == X1Y2r' : 0
+            azp21 == X2Y2r' : 0
+            azp21 == X3Y2r' : 0
+            azp21 == X4Y2r' : 0
+            azp21 == X5Y2ar' : 0
+            azp21 == X0Y0r' : 0
+
+            azp22 == X5Y0r' : 0
+            azp22 == X5Y1r' : 0
+            azp22 == X5Y2r' : 0
+            azp22 == X0Y2r' : 0
+            azp22 == X1Y2r' : 0
+            azp22 == X2Y2r' : 0
+            azp22 == X3Y2r' : 0
+            azp22 == X4Y2r' : 0
+            azp22 == X5Y2ar' : 0
+            azp22 == X0Y0r' : 0
+
+            azp23 == X5Y0r' : 0
+            azp23 == X5Y1r' : 0
+            azp23 == X5Y2r' : 0
+            azp23 == X0Y2r' : 0
+            azp23 == X1Y2r' : 0
+            azp23 == X2Y2r' : 0
+            azp23 == X3Y2r' : 0
+            azp23 == X4Y2r' : 0
+            azp23 == X5Y2ar' : 0
+            azp23 == X0Y0r' : 0
+
+            azp24 == X5Y0r' : 0
+            azp24 == X5Y1r' : 0
+            azp24 == X5Y2r' : 0
+            azp24 == X0Y2r' : 0
+            azp24 == X1Y2r' : 0
+            azp24 == X2Y2r' : 0
+            azp24 == X3Y2r' : 0
+            azp24 == X4Y2r' : 0
+            azp24 == X5Y2ar' : 0
+            azp24 == X0Y0r' : 0
+
+            azp25 == X5Y0r' : 0
+            azp25 == X5Y1r' : 0
+            azp25 == X5Y2r' : 0
+            azp25 == X0Y2r' : 0
+            azp25 == X1Y2r' : 0
+            azp25 == X2Y2r' : 0
+            azp25 == X3Y2r' : 0
+            azp25 == X4Y2r' : 0
+            azp25 == X5Y2ar' : 0
+            azp25 == X0Y0r' : 0
+
+            azp26 == X5Y0r' : 0
+            azp26 == X5Y1r' : 0
+            azp26 == X5Y2r' : 0
+            azp26 == X0Y2r' : 0
+            azp26 == X1Y2r' : 0
+            azp26 == X2Y2r' : 0
+            azp26 == X3Y2r' : 0
+            azp26 == X4Y2r' : 0
+            azp26 == X5Y2ar' : 0
+            azp26 == X0Y0r' : 0
+
+            azp27 == X5Y0r' : 0
+            azp27 == X5Y1r' : 0
+            azp27 == X5Y2r' : 0
+            azp27 == X0Y2r' : 0
+            azp27 == X1Y2r' : 0
+            azp27 == X2Y2r' : 0
+            azp27 == X3Y2r' : 0
+            azp27 == X4Y2r' : 0
+            azp27 == X5Y2ar' : 0
+            azp27 == X0Y0r' : 0
+
+            azp28 == X5Y0r' : 0
+            azp28 == X5Y1r' : 0
+            azp28 == X5Y2r' : 0
+            azp28 == X0Y2r' : 0
+            azp28 == X1Y2r' : 0
+            azp28 == X2Y2r' : 0
+            azp28 == X3Y2r' : 0
+            azp28 == X4Y2r' : 0
+            azp28 == X5Y2ar' : 0
+            azp28 == X0Y0r' : 0
+
+            azp29 == X5Y0r' : 0
+            azp29 == X5Y1r' : 0
+            azp29 == X5Y2r' : 0
+            azp29 == X0Y2r' : 0
+            azp29 == X1Y2r' : 0
+            azp29 == X2Y2r' : 0
+            azp29 == X3Y2r' : 0
+            azp29 == X4Y2r' : 0
+            azp29 == X5Y2ar' : 0
+            azp29 == X0Y0r' : 0
+
+            azp30 == X5Y0r' : 0
+            azp30 == X5Y1r' : 0
+            azp30 == X5Y2r' : 0
+            azp30 == X0Y2r' : 0
+            azp30 == X1Y2r' : 0
+            azp30 == X2Y2r' : 0
+            azp30 == X3Y2r' : 0
+            azp30 == X4Y2r' : 0
+            azp30 == X5Y2ar' : 0
+            azp30 == X0Y0r' : 0
+
+            azp31 == X5Y0r' : 0
+            azp31 == X5Y1r' : 0
+            azp31 == X5Y2r' : 0
+            azp31 == X0Y2r' : 0
+            azp31 == X1Y2r' : 0
+            azp31 == X2Y2r' : 0
+            azp31 == X3Y2r' : 0
+            azp31 == X4Y2r' : 0
+            azp31 == X5Y2ar' : 0
+            azp31 == X0Y0r' : 0
+
+            azp32 == X5Y0r' : 0
+            azp32 == X5Y1r' : 0
+            azp32 == X5Y2r' : 0
+            azp32 == X0Y2r' : 0
+            azp32 == X1Y2r' : 0
+            azp32 == X2Y2r' : 0
+            azp32 == X3Y2r' : 0
+            azp32 == X4Y2r' : 0
+            azp32 == X5Y2ar' : 0
+            azp32 == X0Y0r' : 0
+
+            azp33 == X5Y0r' : 0
+            azp33 == X5Y1r' : 0
+            azp33 == X5Y2r' : 0
+            azp33 == X0Y2r' : 0
+            azp33 == X1Y2r' : 0
+            azp33 == X2Y2r' : 0
+            azp33 == X3Y2r' : 0
+            azp33 == X4Y2r' : 0
+            azp33 == X5Y2ar' : 0
+            azp33 == X0Y0r' : 0
+
+            azp34 == X5Y0r' : 0
+            azp34 == X5Y1r' : 0
+            azp34 == X5Y2r' : 0
+            azp34 == X0Y2r' : 0
+            azp34 == X1Y2r' : 0
+            azp34 == X2Y2r' : 0
+            azp34 == X3Y2r' : 0
+            azp34 == X4Y2r' : 0
+            azp34 == X5Y2ar' : 0
+            azp34 == X0Y0r' : 0
+
+            azp35 == X5Y0r' : 0
+            azp35 == X5Y1r' : 0
+            azp35 == X5Y2r' : 0
+            azp35 == X0Y2r' : 0
+            azp35 == X1Y2r' : 0
+            azp35 == X2Y2r' : 0
+            azp35 == X3Y2r' : 0
+            azp35 == X4Y2r' : 0
+            azp35 == X5Y2ar' : 0
+            azp35 == X0Y0r' : 0
+
+            azp36 == X5Y0r' : 0
+            azp36 == X5Y1r' : 0
+            azp36 == X5Y2r' : 0
+            azp36 == X0Y2r' : 0
+            azp36 == X1Y2r' : 0
+            azp36 == X2Y2r' : 0
+            azp36 == X3Y2r' : 0
+            azp36 == X4Y2r' : 0
+            azp36 == X5Y2ar' : 0
+            azp36 == X0Y0r' : 0
+
+            DEFAULT : fusion_rate_sync_facilitated_sudhof
+        }
+
+        release_vesicle_async {
+            azp1 == X5Y0r' : 0
+            azp1 == X5Y1r' : 0
+            azp1 == X5Y2r' : 0
+            azp1 == X0Y2r' : 0
+            azp1 == X1Y2r' : 0
+            azp1 == X2Y2r' : 0
+            azp1 == X3Y2r' : 0
+            azp1 == X4Y2r' : 0
+            azp1 == X5Y2ar' : 0
+            azp1 == X0Y0r' : 0
+
+            azp2 == X5Y0r' : 0
+            azp2 == X5Y1r' : 0
+            azp2 == X5Y2r' : 0
+            azp2 == X0Y2r' : 0
+            azp2 == X1Y2r' : 0
+            azp2 == X2Y2r' : 0
+            azp2 == X3Y2r' : 0
+            azp2 == X4Y2r' : 0
+            azp2 == X5Y2ar' : 0
+            azp2 == X0Y0r' : 0
+
+            azp3 == X5Y0r' : 0
+            azp3 == X5Y1r' : 0
+            azp3 == X5Y2r' : 0
+            azp3 == X0Y2r' : 0
+            azp3 == X1Y2r' : 0
+            azp3 == X2Y2r' : 0
+            azp3 == X3Y2r' : 0
+            azp3 == X4Y2r' : 0
+            azp3 == X5Y2ar' : 0
+            azp3 == X0Y0r' : 0
+
+            azp4 == X5Y0r' : 0
+            azp4 == X5Y1r' : 0
+            azp4 == X5Y2r' : 0
+            azp4 == X0Y2r' : 0
+            azp4 == X1Y2r' : 0
+            azp4 == X2Y2r' : 0
+            azp4 == X3Y2r' : 0
+            azp4 == X4Y2r' : 0
+            azp4 == X5Y2ar' : 0
+            azp4 == X0Y0r' : 0
+
+            azp5 == X5Y0r' : 0
+            azp5 == X5Y1r' : 0
+            azp5 == X5Y2r' : 0
+            azp5 == X0Y2r' : 0
+            azp5 == X1Y2r' : 0
+            azp5 == X2Y2r' : 0
+            azp5 == X3Y2r' : 0
+            azp5 == X4Y2r' : 0
+            azp5 == X5Y2ar' : 0
+            azp5 == X0Y0r' : 0
+
+            azp6 == X5Y0r' : 0
+            azp6 == X5Y1r' : 0
+            azp6 == X5Y2r' : 0
+            azp6 == X0Y2r' : 0
+            azp6 == X1Y2r' : 0
+            azp6 == X2Y2r' : 0
+            azp6 == X3Y2r' : 0
+            azp6 == X4Y2r' : 0
+            azp6 == X5Y2ar' : 0
+            azp6 == X0Y0r' : 0
+
+            azp7 == X5Y0r' : 0
+            azp7 == X5Y1r' : 0
+            azp7 == X5Y2r' : 0
+            azp7 == X0Y2r' : 0
+            azp7 == X1Y2r' : 0
+            azp7 == X2Y2r' : 0
+            azp7 == X3Y2r' : 0
+            azp7 == X4Y2r' : 0
+            azp7 == X5Y2ar' : 0
+            azp7 == X0Y0r' : 0
+
+            azp8 == X5Y0r' : 0
+            azp8 == X5Y1r' : 0
+            azp8 == X5Y2r' : 0
+            azp8 == X0Y2r' : 0
+            azp8 == X1Y2r' : 0
+            azp8 == X2Y2r' : 0
+            azp8 == X3Y2r' : 0
+            azp8 == X4Y2r' : 0
+            azp8 == X5Y2ar' : 0
+            azp8 == X0Y0r' : 0
+
+            azp9 == X5Y0r' : 0
+            azp9 == X5Y1r' : 0
+            azp9 == X5Y2r' : 0
+            azp9 == X0Y2r' : 0
+            azp9 == X1Y2r' : 0
+            azp9 == X2Y2r' : 0
+            azp9 == X3Y2r' : 0
+            azp9 == X4Y2r' : 0
+            azp9 == X5Y2ar' : 0
+            azp9 == X0Y0r' : 0
+
+            azp10 == X5Y0r' : 0
+            azp10 == X5Y1r' : 0
+            azp10 == X5Y2r' : 0
+            azp10 == X0Y2r' : 0
+            azp10 == X1Y2r' : 0
+            azp10 == X2Y2r' : 0
+            azp10 == X3Y2r' : 0
+            azp10 == X4Y2r' : 0
+            azp10 == X5Y2ar' : 0
+            azp10 == X0Y0r' : 0
+
+            azp11 == X5Y0r' : 0
+            azp11 == X5Y1r' : 0
+            azp11 == X5Y2r' : 0
+            azp11 == X0Y2r' : 0
+            azp11 == X1Y2r' : 0
+            azp11 == X2Y2r' : 0
+            azp11 == X3Y2r' : 0
+            azp11 == X4Y2r' : 0
+            azp11 == X5Y2ar' : 0
+            azp11 == X0Y0r' : 0
+
+            azp12 == X5Y0r' : 0
+            azp12 == X5Y1r' : 0
+            azp12 == X5Y2r' : 0
+            azp12 == X0Y2r' : 0
+            azp12 == X1Y2r' : 0
+            azp12 == X2Y2r' : 0
+            azp12 == X3Y2r' : 0
+            azp12 == X4Y2r' : 0
+            azp12 == X5Y2ar' : 0
+            azp12 == X0Y0r' : 0
+
+            azp13 == X5Y0r' : 0
+            azp13 == X5Y1r' : 0
+            azp13 == X5Y2r' : 0
+            azp13 == X0Y2r' : 0
+            azp13 == X1Y2r' : 0
+            azp13 == X2Y2r' : 0
+            azp13 == X3Y2r' : 0
+            azp13 == X4Y2r' : 0
+            azp13 == X5Y2ar' : 0
+            azp13 == X0Y0r' : 0
+
+            azp14 == X5Y0r' : 0
+            azp14 == X5Y1r' : 0
+            azp14 == X5Y2r' : 0
+            azp14 == X0Y2r' : 0
+            azp14 == X1Y2r' : 0
+            azp14 == X2Y2r' : 0
+            azp14 == X3Y2r' : 0
+            azp14 == X4Y2r' : 0
+            azp14 == X5Y2ar' : 0
+            azp14 == X0Y0r' : 0
+
+            azp15 == X5Y0r' : 0
+            azp15 == X5Y1r' : 0
+            azp15 == X5Y2r' : 0
+            azp15 == X0Y2r' : 0
+            azp15 == X1Y2r' : 0
+            azp15 == X2Y2r' : 0
+            azp15 == X3Y2r' : 0
+            azp15 == X4Y2r' : 0
+            azp15 == X5Y2ar' : 0
+            azp15 == X0Y0r' : 0
+
+            azp16 == X5Y0r' : 0
+            azp16 == X5Y1r' : 0
+            azp16 == X5Y2r' : 0
+            azp16 == X0Y2r' : 0
+            azp16 == X1Y2r' : 0
+            azp16 == X2Y2r' : 0
+            azp16 == X3Y2r' : 0
+            azp16 == X4Y2r' : 0
+            azp16 == X5Y2ar' : 0
+            azp16 == X0Y0r' : 0
+
+            azp17 == X5Y0r' : 0
+            azp17 == X5Y1r' : 0
+            azp17 == X5Y2r' : 0
+            azp17 == X0Y2r' : 0
+            azp17 == X1Y2r' : 0
+            azp17 == X2Y2r' : 0
+            azp17 == X3Y2r' : 0
+            azp17 == X4Y2r' : 0
+            azp17 == X5Y2ar' : 0
+            azp17 == X0Y0r' : 0
+
+            azp18 == X5Y0r' : 0
+            azp18 == X5Y1r' : 0
+            azp18 == X5Y2r' : 0
+            azp18 == X0Y2r' : 0
+            azp18 == X1Y2r' : 0
+            azp18 == X2Y2r' : 0
+            azp18 == X3Y2r' : 0
+            azp18 == X4Y2r' : 0
+            azp18 == X5Y2ar' : 0
+            azp18 == X0Y0r' : 0
+
+            azp19 == X5Y0r' : 0
+            azp19 == X5Y1r' : 0
+            azp19 == X5Y2r' : 0
+            azp19 == X0Y2r' : 0
+            azp19 == X1Y2r' : 0
+            azp19 == X2Y2r' : 0
+            azp19 == X3Y2r' : 0
+            azp19 == X4Y2r' : 0
+            azp19 == X5Y2ar' : 0
+            azp19 == X0Y0r' : 0
+
+            azp20 == X5Y0r' : 0
+            azp20 == X5Y1r' : 0
+            azp20 == X5Y2r' : 0
+            azp20 == X0Y2r' : 0
+            azp20 == X1Y2r' : 0
+            azp20 == X2Y2r' : 0
+            azp20 == X3Y2r' : 0
+            azp20 == X4Y2r' : 0
+            azp20 == X5Y2ar' : 0
+            azp20 == X0Y0r' : 0
+
+            azp21 == X5Y0r' : 0
+            azp21 == X5Y1r' : 0
+            azp21 == X5Y2r' : 0
+            azp21 == X0Y2r' : 0
+            azp21 == X1Y2r' : 0
+            azp21 == X2Y2r' : 0
+            azp21 == X3Y2r' : 0
+            azp21 == X4Y2r' : 0
+            azp21 == X5Y2ar' : 0
+            azp21 == X0Y0r' : 0
+
+            azp22 == X5Y0r' : 0
+            azp22 == X5Y1r' : 0
+            azp22 == X5Y2r' : 0
+            azp22 == X0Y2r' : 0
+            azp22 == X1Y2r' : 0
+            azp22 == X2Y2r' : 0
+            azp22 == X3Y2r' : 0
+            azp22 == X4Y2r' : 0
+            azp22 == X5Y2ar' : 0
+            azp22 == X0Y0r' : 0
+
+            azp23 == X5Y0r' : 0
+            azp23 == X5Y1r' : 0
+            azp23 == X5Y2r' : 0
+            azp23 == X0Y2r' : 0
+            azp23 == X1Y2r' : 0
+            azp23 == X2Y2r' : 0
+            azp23 == X3Y2r' : 0
+            azp23 == X4Y2r' : 0
+            azp23 == X5Y2ar' : 0
+            azp23 == X0Y0r' : 0
+
+            azp24 == X5Y0r' : 0
+            azp24 == X5Y1r' : 0
+            azp24 == X5Y2r' : 0
+            azp24 == X0Y2r' : 0
+            azp24 == X1Y2r' : 0
+            azp24 == X2Y2r' : 0
+            azp24 == X3Y2r' : 0
+            azp24 == X4Y2r' : 0
+            azp24 == X5Y2ar' : 0
+            azp24 == X0Y0r' : 0
+
+            azp25 == X5Y0r' : 0
+            azp25 == X5Y1r' : 0
+            azp25 == X5Y2r' : 0
+            azp25 == X0Y2r' : 0
+            azp25 == X1Y2r' : 0
+            azp25 == X2Y2r' : 0
+            azp25 == X3Y2r' : 0
+            azp25 == X4Y2r' : 0
+            azp25 == X5Y2ar' : 0
+            azp25 == X0Y0r' : 0
+
+            azp26 == X5Y0r' : 0
+            azp26 == X5Y1r' : 0
+            azp26 == X5Y2r' : 0
+            azp26 == X0Y2r' : 0
+            azp26 == X1Y2r' : 0
+            azp26 == X2Y2r' : 0
+            azp26 == X3Y2r' : 0
+            azp26 == X4Y2r' : 0
+            azp26 == X5Y2ar' : 0
+            azp26 == X0Y0r' : 0
+
+            azp27 == X5Y0r' : 0
+            azp27 == X5Y1r' : 0
+            azp27 == X5Y2r' : 0
+            azp27 == X0Y2r' : 0
+            azp27 == X1Y2r' : 0
+            azp27 == X2Y2r' : 0
+            azp27 == X3Y2r' : 0
+            azp27 == X4Y2r' : 0
+            azp27 == X5Y2ar' : 0
+            azp27 == X0Y0r' : 0
+
+            azp28 == X5Y0r' : 0
+            azp28 == X5Y1r' : 0
+            azp28 == X5Y2r' : 0
+            azp28 == X0Y2r' : 0
+            azp28 == X1Y2r' : 0
+            azp28 == X2Y2r' : 0
+            azp28 == X3Y2r' : 0
+            azp28 == X4Y2r' : 0
+            azp28 == X5Y2ar' : 0
+            azp28 == X0Y0r' : 0
+
+            azp29 == X5Y0r' : 0
+            azp29 == X5Y1r' : 0
+            azp29 == X5Y2r' : 0
+            azp29 == X0Y2r' : 0
+            azp29 == X1Y2r' : 0
+            azp29 == X2Y2r' : 0
+            azp29 == X3Y2r' : 0
+            azp29 == X4Y2r' : 0
+            azp29 == X5Y2ar' : 0
+            azp29 == X0Y0r' : 0
+
+            azp30 == X5Y0r' : 0
+            azp30 == X5Y1r' : 0
+            azp30 == X5Y2r' : 0
+            azp30 == X0Y2r' : 0
+            azp30 == X1Y2r' : 0
+            azp30 == X2Y2r' : 0
+            azp30 == X3Y2r' : 0
+            azp30 == X4Y2r' : 0
+            azp30 == X5Y2ar' : 0
+            azp30 == X0Y0r' : 0
+
+            azp31 == X5Y0r' : 0
+            azp31 == X5Y1r' : 0
+            azp31 == X5Y2r' : 0
+            azp31 == X0Y2r' : 0
+            azp31 == X1Y2r' : 0
+            azp31 == X2Y2r' : 0
+            azp31 == X3Y2r' : 0
+            azp31 == X4Y2r' : 0
+            azp31 == X5Y2ar' : 0
+            azp31 == X0Y0r' : 0
+
+            azp32 == X5Y0r' : 0
+            azp32 == X5Y1r' : 0
+            azp32 == X5Y2r' : 0
+            azp32 == X0Y2r' : 0
+            azp32 == X1Y2r' : 0
+            azp32 == X2Y2r' : 0
+            azp32 == X3Y2r' : 0
+            azp32 == X4Y2r' : 0
+            azp32 == X5Y2ar' : 0
+            azp32 == X0Y0r' : 0
+
+            azp33 == X5Y0r' : 0
+            azp33 == X5Y1r' : 0
+            azp33 == X5Y2r' : 0
+            azp33 == X0Y2r' : 0
+            azp33 == X1Y2r' : 0
+            azp33 == X2Y2r' : 0
+            azp33 == X3Y2r' : 0
+            azp33 == X4Y2r' : 0
+            azp33 == X5Y2ar' : 0
+            azp33 == X0Y0r' : 0
+
+            azp34 == X5Y0r' : 0
+            azp34 == X5Y1r' : 0
+            azp34 == X5Y2r' : 0
+            azp34 == X0Y2r' : 0
+            azp34 == X1Y2r' : 0
+            azp34 == X2Y2r' : 0
+            azp34 == X3Y2r' : 0
+            azp34 == X4Y2r' : 0
+            azp34 == X5Y2ar' : 0
+            azp34 == X0Y0r' : 0
+
+            azp35 == X5Y0r' : 0
+            azp35 == X5Y1r' : 0
+            azp35 == X5Y2r' : 0
+            azp35 == X0Y2r' : 0
+            azp35 == X1Y2r' : 0
+            azp35 == X2Y2r' : 0
+            azp35 == X3Y2r' : 0
+            azp35 == X4Y2r' : 0
+            azp35 == X5Y2ar' : 0
+            azp35 == X0Y0r' : 0
+
+            azp36 == X5Y0r' : 0
+            azp36 == X5Y1r' : 0
+            azp36 == X5Y2r' : 0
+            azp36 == X0Y2r' : 0
+            azp36 == X1Y2r' : 0
+            azp36 == X2Y2r' : 0
+            azp36 == X3Y2r' : 0
+            azp36 == X4Y2r' : 0
+            azp36 == X5Y2ar' : 0
+            azp36 == X0Y0r' : 0
+
+            DEFAULT : fusion_rate_async_sudhof
+        }
+
+        release_vesicle_spont {
+            azp1 == X5Y0r' : 0
+            azp1 == X5Y1r' : 0
+            azp1 == X5Y2r' : 0
+            azp1 == X0Y2r' : 0
+            azp1 == X1Y2r' : 0
+            azp1 == X2Y2r' : 0
+            azp1 == X3Y2r' : 0
+            azp1 == X4Y2r' : 0
+            azp1 == X5Y2ar' : 0
+            azp1 == X0Y0r' : 0
+
+            azp2 == X5Y0r' : 0
+            azp2 == X5Y1r' : 0
+            azp2 == X5Y2r' : 0
+            azp2 == X0Y2r' : 0
+            azp2 == X1Y2r' : 0
+            azp2 == X2Y2r' : 0
+            azp2 == X3Y2r' : 0
+            azp2 == X4Y2r' : 0
+            azp2 == X5Y2ar' : 0
+            azp2 == X0Y0r' : 0
+
+            azp3 == X5Y0r' : 0
+            azp3 == X5Y1r' : 0
+            azp3 == X5Y2r' : 0
+            azp3 == X0Y2r' : 0
+            azp3 == X1Y2r' : 0
+            azp3 == X2Y2r' : 0
+            azp3 == X3Y2r' : 0
+            azp3 == X4Y2r' : 0
+            azp3 == X5Y2ar' : 0
+            azp3 == X0Y0r' : 0
+
+            azp4 == X5Y0r' : 0
+            azp4 == X5Y1r' : 0
+            azp4 == X5Y2r' : 0
+            azp4 == X0Y2r' : 0
+            azp4 == X1Y2r' : 0
+            azp4 == X2Y2r' : 0
+            azp4 == X3Y2r' : 0
+            azp4 == X4Y2r' : 0
+            azp4 == X5Y2ar' : 0
+            azp4 == X0Y0r' : 0
+
+            azp5 == X5Y0r' : 0
+            azp5 == X5Y1r' : 0
+            azp5 == X5Y2r' : 0
+            azp5 == X0Y2r' : 0
+            azp5 == X1Y2r' : 0
+            azp5 == X2Y2r' : 0
+            azp5 == X3Y2r' : 0
+            azp5 == X4Y2r' : 0
+            azp5 == X5Y2ar' : 0
+            azp5 == X0Y0r' : 0
+
+            azp6 == X5Y0r' : 0
+            azp6 == X5Y1r' : 0
+            azp6 == X5Y2r' : 0
+            azp6 == X0Y2r' : 0
+            azp6 == X1Y2r' : 0
+            azp6 == X2Y2r' : 0
+            azp6 == X3Y2r' : 0
+            azp6 == X4Y2r' : 0
+            azp6 == X5Y2ar' : 0
+            azp6 == X0Y0r' : 0
+
+            azp7 == X5Y0r' : 0
+            azp7 == X5Y1r' : 0
+            azp7 == X5Y2r' : 0
+            azp7 == X0Y2r' : 0
+            azp7 == X1Y2r' : 0
+            azp7 == X2Y2r' : 0
+            azp7 == X3Y2r' : 0
+            azp7 == X4Y2r' : 0
+            azp7 == X5Y2ar' : 0
+            azp7 == X0Y0r' : 0
+
+            azp8 == X5Y0r' : 0
+            azp8 == X5Y1r' : 0
+            azp8 == X5Y2r' : 0
+            azp8 == X0Y2r' : 0
+            azp8 == X1Y2r' : 0
+            azp8 == X2Y2r' : 0
+            azp8 == X3Y2r' : 0
+            azp8 == X4Y2r' : 0
+            azp8 == X5Y2ar' : 0
+            azp8 == X0Y0r' : 0
+
+            azp9 == X5Y0r' : 0
+            azp9 == X5Y1r' : 0
+            azp9 == X5Y2r' : 0
+            azp9 == X0Y2r' : 0
+            azp9 == X1Y2r' : 0
+            azp9 == X2Y2r' : 0
+            azp9 == X3Y2r' : 0
+            azp9 == X4Y2r' : 0
+            azp9 == X5Y2ar' : 0
+            azp9 == X0Y0r' : 0
+
+            azp10 == X5Y0r' : 0
+            azp10 == X5Y1r' : 0
+            azp10 == X5Y2r' : 0
+            azp10 == X0Y2r' : 0
+            azp10 == X1Y2r' : 0
+            azp10 == X2Y2r' : 0
+            azp10 == X3Y2r' : 0
+            azp10 == X4Y2r' : 0
+            azp10 == X5Y2ar' : 0
+            azp10 == X0Y0r' : 0
+
+            azp11 == X5Y0r' : 0
+            azp11 == X5Y1r' : 0
+            azp11 == X5Y2r' : 0
+            azp11 == X0Y2r' : 0
+            azp11 == X1Y2r' : 0
+            azp11 == X2Y2r' : 0
+            azp11 == X3Y2r' : 0
+            azp11 == X4Y2r' : 0
+            azp11 == X5Y2ar' : 0
+            azp11 == X0Y0r' : 0
+
+            azp12 == X5Y0r' : 0
+            azp12 == X5Y1r' : 0
+            azp12 == X5Y2r' : 0
+            azp12 == X0Y2r' : 0
+            azp12 == X1Y2r' : 0
+            azp12 == X2Y2r' : 0
+            azp12 == X3Y2r' : 0
+            azp12 == X4Y2r' : 0
+            azp12 == X5Y2ar' : 0
+            azp12 == X0Y0r' : 0
+
+            azp13 == X5Y0r' : 0
+            azp13 == X5Y1r' : 0
+            azp13 == X5Y2r' : 0
+            azp13 == X0Y2r' : 0
+            azp13 == X1Y2r' : 0
+            azp13 == X2Y2r' : 0
+            azp13 == X3Y2r' : 0
+            azp13 == X4Y2r' : 0
+            azp13 == X5Y2ar' : 0
+            azp13 == X0Y0r' : 0
+
+            azp14 == X5Y0r' : 0
+            azp14 == X5Y1r' : 0
+            azp14 == X5Y2r' : 0
+            azp14 == X0Y2r' : 0
+            azp14 == X1Y2r' : 0
+            azp14 == X2Y2r' : 0
+            azp14 == X3Y2r' : 0
+            azp14 == X4Y2r' : 0
+            azp14 == X5Y2ar' : 0
+            azp14 == X0Y0r' : 0
+
+            azp15 == X5Y0r' : 0
+            azp15 == X5Y1r' : 0
+            azp15 == X5Y2r' : 0
+            azp15 == X0Y2r' : 0
+            azp15 == X1Y2r' : 0
+            azp15 == X2Y2r' : 0
+            azp15 == X3Y2r' : 0
+            azp15 == X4Y2r' : 0
+            azp15 == X5Y2ar' : 0
+            azp15 == X0Y0r' : 0
+
+            azp16 == X5Y0r' : 0
+            azp16 == X5Y1r' : 0
+            azp16 == X5Y2r' : 0
+            azp16 == X0Y2r' : 0
+            azp16 == X1Y2r' : 0
+            azp16 == X2Y2r' : 0
+            azp16 == X3Y2r' : 0
+            azp16 == X4Y2r' : 0
+            azp16 == X5Y2ar' : 0
+            azp16 == X0Y0r' : 0
+
+            azp17 == X5Y0r' : 0
+            azp17 == X5Y1r' : 0
+            azp17 == X5Y2r' : 0
+            azp17 == X0Y2r' : 0
+            azp17 == X1Y2r' : 0
+            azp17 == X2Y2r' : 0
+            azp17 == X3Y2r' : 0
+            azp17 == X4Y2r' : 0
+            azp17 == X5Y2ar' : 0
+            azp17 == X0Y0r' : 0
+
+            azp18 == X5Y0r' : 0
+            azp18 == X5Y1r' : 0
+            azp18 == X5Y2r' : 0
+            azp18 == X0Y2r' : 0
+            azp18 == X1Y2r' : 0
+            azp18 == X2Y2r' : 0
+            azp18 == X3Y2r' : 0
+            azp18 == X4Y2r' : 0
+            azp18 == X5Y2ar' : 0
+            azp18 == X0Y0r' : 0
+
+            azp19 == X5Y0r' : 0
+            azp19 == X5Y1r' : 0
+            azp19 == X5Y2r' : 0
+            azp19 == X0Y2r' : 0
+            azp19 == X1Y2r' : 0
+            azp19 == X2Y2r' : 0
+            azp19 == X3Y2r' : 0
+            azp19 == X4Y2r' : 0
+            azp19 == X5Y2ar' : 0
+            azp19 == X0Y0r' : 0
+
+            azp20 == X5Y0r' : 0
+            azp20 == X5Y1r' : 0
+            azp20 == X5Y2r' : 0
+            azp20 == X0Y2r' : 0
+            azp20 == X1Y2r' : 0
+            azp20 == X2Y2r' : 0
+            azp20 == X3Y2r' : 0
+            azp20 == X4Y2r' : 0
+            azp20 == X5Y2ar' : 0
+            azp20 == X0Y0r' : 0
+
+            azp21 == X5Y0r' : 0
+            azp21 == X5Y1r' : 0
+            azp21 == X5Y2r' : 0
+            azp21 == X0Y2r' : 0
+            azp21 == X1Y2r' : 0
+            azp21 == X2Y2r' : 0
+            azp21 == X3Y2r' : 0
+            azp21 == X4Y2r' : 0
+            azp21 == X5Y2ar' : 0
+            azp21 == X0Y0r' : 0
+
+            azp22 == X5Y0r' : 0
+            azp22 == X5Y1r' : 0
+            azp22 == X5Y2r' : 0
+            azp22 == X0Y2r' : 0
+            azp22 == X1Y2r' : 0
+            azp22 == X2Y2r' : 0
+            azp22 == X3Y2r' : 0
+            azp22 == X4Y2r' : 0
+            azp22 == X5Y2ar' : 0
+            azp22 == X0Y0r' : 0
+
+            azp23 == X5Y0r' : 0
+            azp23 == X5Y1r' : 0
+            azp23 == X5Y2r' : 0
+            azp23 == X0Y2r' : 0
+            azp23 == X1Y2r' : 0
+            azp23 == X2Y2r' : 0
+            azp23 == X3Y2r' : 0
+            azp23 == X4Y2r' : 0
+            azp23 == X5Y2ar' : 0
+            azp23 == X0Y0r' : 0
+
+            azp24 == X5Y0r' : 0
+            azp24 == X5Y1r' : 0
+            azp24 == X5Y2r' : 0
+            azp24 == X0Y2r' : 0
+            azp24 == X1Y2r' : 0
+            azp24 == X2Y2r' : 0
+            azp24 == X3Y2r' : 0
+            azp24 == X4Y2r' : 0
+            azp24 == X5Y2ar' : 0
+            azp24 == X0Y0r' : 0
+
+            azp25 == X5Y0r' : 0
+            azp25 == X5Y1r' : 0
+            azp25 == X5Y2r' : 0
+            azp25 == X0Y2r' : 0
+            azp25 == X1Y2r' : 0
+            azp25 == X2Y2r' : 0
+            azp25 == X3Y2r' : 0
+            azp25 == X4Y2r' : 0
+            azp25 == X5Y2ar' : 0
+            azp25 == X0Y0r' : 0
+
+            azp26 == X5Y0r' : 0
+            azp26 == X5Y1r' : 0
+            azp26 == X5Y2r' : 0
+            azp26 == X0Y2r' : 0
+            azp26 == X1Y2r' : 0
+            azp26 == X2Y2r' : 0
+            azp26 == X3Y2r' : 0
+            azp26 == X4Y2r' : 0
+            azp26 == X5Y2ar' : 0
+            azp26 == X0Y0r' : 0
+
+            azp27 == X5Y0r' : 0
+            azp27 == X5Y1r' : 0
+            azp27 == X5Y2r' : 0
+            azp27 == X0Y2r' : 0
+            azp27 == X1Y2r' : 0
+            azp27 == X2Y2r' : 0
+            azp27 == X3Y2r' : 0
+            azp27 == X4Y2r' : 0
+            azp27 == X5Y2ar' : 0
+            azp27 == X0Y0r' : 0
+
+            azp28 == X5Y0r' : 0
+            azp28 == X5Y1r' : 0
+            azp28 == X5Y2r' : 0
+            azp28 == X0Y2r' : 0
+            azp28 == X1Y2r' : 0
+            azp28 == X2Y2r' : 0
+            azp28 == X3Y2r' : 0
+            azp28 == X4Y2r' : 0
+            azp28 == X5Y2ar' : 0
+            azp28 == X0Y0r' : 0
+
+            azp29 == X5Y0r' : 0
+            azp29 == X5Y1r' : 0
+            azp29 == X5Y2r' : 0
+            azp29 == X0Y2r' : 0
+            azp29 == X1Y2r' : 0
+            azp29 == X2Y2r' : 0
+            azp29 == X3Y2r' : 0
+            azp29 == X4Y2r' : 0
+            azp29 == X5Y2ar' : 0
+            azp29 == X0Y0r' : 0
+
+            azp30 == X5Y0r' : 0
+            azp30 == X5Y1r' : 0
+            azp30 == X5Y2r' : 0
+            azp30 == X0Y2r' : 0
+            azp30 == X1Y2r' : 0
+            azp30 == X2Y2r' : 0
+            azp30 == X3Y2r' : 0
+            azp30 == X4Y2r' : 0
+            azp30 == X5Y2ar' : 0
+            azp30 == X0Y0r' : 0
+
+            azp31 == X5Y0r' : 0
+            azp31 == X5Y1r' : 0
+            azp31 == X5Y2r' : 0
+            azp31 == X0Y2r' : 0
+            azp31 == X1Y2r' : 0
+            azp31 == X2Y2r' : 0
+            azp31 == X3Y2r' : 0
+            azp31 == X4Y2r' : 0
+            azp31 == X5Y2ar' : 0
+            azp31 == X0Y0r' : 0
+
+            azp32 == X5Y0r' : 0
+            azp32 == X5Y1r' : 0
+            azp32 == X5Y2r' : 0
+            azp32 == X0Y2r' : 0
+            azp32 == X1Y2r' : 0
+            azp32 == X2Y2r' : 0
+            azp32 == X3Y2r' : 0
+            azp32 == X4Y2r' : 0
+            azp32 == X5Y2ar' : 0
+            azp32 == X0Y0r' : 0
+
+            azp33 == X5Y0r' : 0
+            azp33 == X5Y1r' : 0
+            azp33 == X5Y2r' : 0
+            azp33 == X0Y2r' : 0
+            azp33 == X1Y2r' : 0
+            azp33 == X2Y2r' : 0
+            azp33 == X3Y2r' : 0
+            azp33 == X4Y2r' : 0
+            azp33 == X5Y2ar' : 0
+            azp33 == X0Y0r' : 0
+
+            azp34 == X5Y0r' : 0
+            azp34 == X5Y1r' : 0
+            azp34 == X5Y2r' : 0
+            azp34 == X0Y2r' : 0
+            azp34 == X1Y2r' : 0
+            azp34 == X2Y2r' : 0
+            azp34 == X3Y2r' : 0
+            azp34 == X4Y2r' : 0
+            azp34 == X5Y2ar' : 0
+            azp34 == X0Y0r' : 0
+
+            azp35 == X5Y0r' : 0
+            azp35 == X5Y1r' : 0
+            azp35 == X5Y2r' : 0
+            azp35 == X0Y2r' : 0
+            azp35 == X1Y2r' : 0
+            azp35 == X2Y2r' : 0
+            azp35 == X3Y2r' : 0
+            azp35 == X4Y2r' : 0
+            azp35 == X5Y2ar' : 0
+            azp35 == X0Y0r' : 0
+
+            azp36 == X5Y0r' : 0
+            azp36 == X5Y1r' : 0
+            azp36 == X5Y2r' : 0
+            azp36 == X0Y2r' : 0
+            azp36 == X1Y2r' : 0
+            azp36 == X2Y2r' : 0
+            azp36 == X3Y2r' : 0
+            azp36 == X4Y2r' : 0
+            azp36 == X5Y2ar' : 0
+            azp36 == X0Y0r' : 0
+
+            DEFAULT : fusion_rate_sudhof_spont
+        }
+    }
+}

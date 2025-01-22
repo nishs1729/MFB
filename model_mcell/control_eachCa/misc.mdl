@@ -1,0 +1,71 @@
+TIME_STEP = 1e-06
+VACANCY_SEARCH_DISTANCE = 10
+
+n_Glu_neuron = 0
+
+/* Store the value of SEED in variable seed */
+sprintf(seed,"%05g",SEED)
+
+/* Specify directory for output data */
+INCLUDE_FILE = "../outputDir.mdl"
+
+
+presynaptic_area = 4.1*2.5*4 + 2.5*0.8*2
+presynaptic_vol = 4.1*2.5*0.8
+
+ca_conc_presynaptic = 100e-9
+
+DEFINE_MOLECULES {
+	Glu {D_3D = 2.2e-06}
+	Ca0  {D_3D = 2.2e-06}
+	Ca1  {D_3D = 2.2e-06}
+	Ca2  {D_3D = 2.2e-06}
+	Ca3  {D_3D = 2.2e-06}
+	Ca4  {D_3D = 2.2e-06}
+	Ca5  {D_3D = 2.2e-06}
+	Ca6  {D_3D = 2.2e-06}
+	Ca7  {D_3D = 2.2e-06}
+	Ca8  {D_3D = 2.2e-06}
+	Ca9  {D_3D = 2.2e-06}
+	Ca10  {D_3D = 2.2e-06}
+	Ca11  {D_3D = 2.2e-06}
+	Ca12  {D_3D = 2.2e-06}
+	Ca13  {D_3D = 2.2e-06}
+	Ca14  {D_3D = 2.2e-06}
+	Ca15  {D_3D = 2.2e-06}
+	Ca16  {D_3D = 2.2e-06}
+	Ca17  {D_3D = 2.2e-06}
+	Ca18  {D_3D = 2.2e-06}
+	Ca19  {D_3D = 2.2e-06}
+	Ca20  {D_3D = 2.2e-06}
+	Ca21  {D_3D = 2.2e-06}
+	Ca22  {D_3D = 2.2e-06}
+	Ca23  {D_3D = 2.2e-06}
+	Ca24  {D_3D = 2.2e-06}
+	Ca25  {D_3D = 2.2e-06}
+	Ca26  {D_3D = 2.2e-06}
+	Ca27  {D_3D = 2.2e-06}
+	Ca28  {D_3D = 2.2e-06}
+	Ca29  {D_3D = 2.2e-06}
+	Ca30  {D_3D = 2.2e-06}
+	Ca31  {D_3D = 2.2e-06}
+	Ca32  {D_3D = 2.2e-06}
+	Ca33  {D_3D = 2.2e-06}
+	Ca34  {D_3D = 2.2e-06}
+	Ca35  {D_3D = 2.2e-06}
+}
+
+INCLUDE_FILE = "../mfb_bouton_geometry.mdl"
+INSTANTIATE MFB OBJECT
+{
+	bouton OBJECT bouton {}	// MFB bouton
+	//presynaptic_active_zone OBJECT presynaptic_active_zone {}
+
+	/* presynaptic cytoplasm Ca concentration */
+	presynaptic_calcium RELEASE_SITE {
+	    SHAPE = (MFB.bouton[ALL])
+	    MOLECULE = Ca0
+	    CONCENTRATION = ca_conc_presynaptic
+	}
+
+}

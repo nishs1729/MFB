@@ -1,0 +1,212 @@
+PMCA_density_presynaptic = 180
+
+// rates for PMCA pump
+// According to Sneyd et al, 2003, Biophys. J.
+//Vmax for PMCA channels is 28 uM/s.
+//At 10/s per channel we'll need 1900 channels or 180 per um^2
+/*
+k_PMCA0_1 = 1.5e8
+k_PMCA1_0 = 20
+k_PMCA1_2 = 10
+k_PMCA2_0 = 1e5
+k_PMCA0_leak = 5
+*/
+
+// But that's too slow so let's increase the density to 1000 um^2
+// and the pump rate to 100/s
+k_PMCA0_1 = 1.5e8
+k_PMCA1_0 = 20
+k_PMCA1_2 = 100
+k_PMCA2_0 = 1e5
+
+// Calculate leak rate needed to achieve desired [Ca]i
+cai = ca_conc_presynaptic
+Km = (k_PMCA1_0+k_PMCA1_2)/k_PMCA0_1
+E0 = 1e15*(PMCA_density_presynaptic*presynaptic_area/presynaptic_vol)/6.02205e23
+ES = (E0*cai)/(Km+cai)
+E = E0-ES
+Vmax = k_PMCA1_2*E0
+V = (Vmax*cai)/(Km+cai)
+pmca_pump_rate = V/E
+
+/* leak rate calculated above from [Ca]i given by ca_conc_base_presynaptic */
+k_PMCA0_leak = pmca_pump_rate
+
+
+DEFINE_MOLECULES {
+
+    PMCA0 {D_2D = 0}
+	PMCA1_1 {D_2D = 0}
+	PMCA1_2 {D_2D = 0}
+	PMCA2_1 {D_2D = 0}
+	PMCA2_2 {D_2D = 0}
+	PMCA3_1 {D_2D = 0}
+	PMCA3_2 {D_2D = 0}
+	PMCA4_1 {D_2D = 0}
+	PMCA4_2 {D_2D = 0}
+	PMCA5_1 {D_2D = 0}
+	PMCA5_2 {D_2D = 0}
+	PMCA6_1 {D_2D = 0}
+	PMCA6_2 {D_2D = 0}
+	PMCA7_1 {D_2D = 0}
+	PMCA7_2 {D_2D = 0}
+	PMCA8_1 {D_2D = 0}
+	PMCA8_2 {D_2D = 0}
+	PMCA9_1 {D_2D = 0}
+	PMCA9_2 {D_2D = 0}
+	PMCA10_1 {D_2D = 0}
+	PMCA10_2 {D_2D = 0}
+	PMCA11_1 {D_2D = 0}
+	PMCA11_2 {D_2D = 0}
+	PMCA12_1 {D_2D = 0}
+	PMCA12_2 {D_2D = 0}
+	PMCA13_1 {D_2D = 0}
+	PMCA13_2 {D_2D = 0}
+	PMCA14_1 {D_2D = 0}
+	PMCA14_2 {D_2D = 0}
+	PMCA15_1 {D_2D = 0}
+	PMCA15_2 {D_2D = 0}
+	PMCA16_1 {D_2D = 0}
+	PMCA16_2 {D_2D = 0}
+	PMCA17_1 {D_2D = 0}
+	PMCA17_2 {D_2D = 0}
+	PMCA18_1 {D_2D = 0}
+	PMCA18_2 {D_2D = 0}
+	PMCA19_1 {D_2D = 0}
+	PMCA19_2 {D_2D = 0}
+	PMCA20_1 {D_2D = 0}
+	PMCA20_2 {D_2D = 0}
+	PMCA21_1 {D_2D = 0}
+	PMCA21_2 {D_2D = 0}
+	PMCA22_1 {D_2D = 0}
+	PMCA22_2 {D_2D = 0}
+	PMCA23_1 {D_2D = 0}
+	PMCA23_2 {D_2D = 0}
+	PMCA24_1 {D_2D = 0}
+	PMCA24_2 {D_2D = 0}
+	PMCA25_1 {D_2D = 0}
+	PMCA25_2 {D_2D = 0}
+	PMCA26_1 {D_2D = 0}
+	PMCA26_2 {D_2D = 0}
+}
+
+DEFINE_REACTIONS {
+
+    // PMCA pump with built-in leak
+    PMCA0'         -> PMCA0' + Ca0, [k_PMCA0_leak]  // leak    
+    
+
+    Ca1, + PMCA0' <-> PMCA1_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA1_1'       -> PMCA1_2'      [k_PMCA1_2]
+    PMCA1_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca2, + PMCA0' <-> PMCA2_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA2_1'       -> PMCA2_2'      [k_PMCA1_2]
+    PMCA2_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca3, + PMCA0' <-> PMCA3_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA3_1'       -> PMCA3_2'      [k_PMCA1_2]
+    PMCA3_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca4, + PMCA0' <-> PMCA4_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA4_1'       -> PMCA4_2'      [k_PMCA1_2]
+    PMCA4_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca5, + PMCA0' <-> PMCA5_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA5_1'       -> PMCA5_2'      [k_PMCA1_2]
+    PMCA5_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca6, + PMCA0' <-> PMCA6_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA6_1'       -> PMCA6_2'      [k_PMCA1_2]
+    PMCA6_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca7, + PMCA0' <-> PMCA7_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA7_1'       -> PMCA7_2'      [k_PMCA1_2]
+    PMCA7_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca8, + PMCA0' <-> PMCA8_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA8_1'       -> PMCA8_2'      [k_PMCA1_2]
+    PMCA8_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca9, + PMCA0' <-> PMCA9_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA9_1'       -> PMCA9_2'      [k_PMCA1_2]
+    PMCA9_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca10, + PMCA0' <-> PMCA10_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA10_1'       -> PMCA10_2'      [k_PMCA1_2]
+    PMCA10_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca11, + PMCA0' <-> PMCA11_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA11_1'       -> PMCA11_2'      [k_PMCA1_2]
+    PMCA11_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca12, + PMCA0' <-> PMCA12_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA12_1'       -> PMCA12_2'      [k_PMCA1_2]
+    PMCA12_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca13, + PMCA0' <-> PMCA13_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA13_1'       -> PMCA13_2'      [k_PMCA1_2]
+    PMCA13_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca14, + PMCA0' <-> PMCA14_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA14_1'       -> PMCA14_2'      [k_PMCA1_2]
+    PMCA14_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca15, + PMCA0' <-> PMCA15_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA15_1'       -> PMCA15_2'      [k_PMCA1_2]
+    PMCA15_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca16, + PMCA0' <-> PMCA16_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA16_1'       -> PMCA16_2'      [k_PMCA1_2]
+    PMCA16_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca17, + PMCA0' <-> PMCA17_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA17_1'       -> PMCA17_2'      [k_PMCA1_2]
+    PMCA17_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca18, + PMCA0' <-> PMCA18_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA18_1'       -> PMCA18_2'      [k_PMCA1_2]
+    PMCA18_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca19, + PMCA0' <-> PMCA19_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA19_1'       -> PMCA19_2'      [k_PMCA1_2]
+    PMCA19_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca20, + PMCA0' <-> PMCA20_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA20_1'       -> PMCA20_2'      [k_PMCA1_2]
+    PMCA20_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca21, + PMCA0' <-> PMCA21_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA21_1'       -> PMCA21_2'      [k_PMCA1_2]
+    PMCA21_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca22, + PMCA0' <-> PMCA22_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA22_1'       -> PMCA22_2'      [k_PMCA1_2]
+    PMCA22_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca23, + PMCA0' <-> PMCA23_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA23_1'       -> PMCA23_2'      [k_PMCA1_2]
+    PMCA23_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca24, + PMCA0' <-> PMCA24_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA24_1'       -> PMCA24_2'      [k_PMCA1_2]
+    PMCA24_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca25, + PMCA0' <-> PMCA25_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA25_1'       -> PMCA25_2'      [k_PMCA1_2]
+    PMCA25_2'       -> PMCA0'        [k_PMCA2_0]
+
+    Ca26, + PMCA0' <-> PMCA26_1'      [>k_PMCA0_1, <k_PMCA1_0]
+    PMCA26_1'       -> PMCA26_2'      [k_PMCA1_2]
+    PMCA26_2'       -> PMCA0'        [k_PMCA2_0]
+}
+
+INSTANTIATE PMCA OBJECT
+{
+	/* presynaptic PMCA */
+	presynaptic_PMCA RELEASE_SITE {
+        SHAPE = (MFB.bouton[ALL])
+        MOLECULE = PMCA0'
+        DENSITY = PMCA_density_presynaptic
+	}
+}
