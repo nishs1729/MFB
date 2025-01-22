@@ -55,28 +55,28 @@ Ileaks = Gl*(Vs - Vl) : amp
 Isyn : amp
 
 ## ODEs
-dVs/dt  = z0*(- Ileaks - Ina - Ikdr - Ids/p)/Cm_PR : volt
-dVd/dt  = z1*(- Ileakd - Ica - Ikca - Ikahp - Isyn - Isd/(1-p))/Cm_PR : volt
-dm/dt   = z2*(alphaM - m*(alphaM + betaM)) : 1
-dn/dt   = z3*(alphaN - n*(alphaN + betaN)) : 1
-dh/dt   = z4*(alphaH - h*(alphaH + betaH)) : 1
-ds/dt   = z5*(alphaS - s*(alphaS + betaS)) : 1
-dq/dt   = z6*(qinf - q)/tauq : 1
-dc/dt   = z7*(cinf - c)/tauc : 1
-dCa/dt  = z8*(-0.13*Ica/uA - 0.075*Ca)/ms : 1
+dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p)/Cm_PR : volt
+dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Isyn - Isd/(1-p))/Cm_PR : volt
+dm/dt   = alphaM - m*(alphaM + betaM) : 1
+dn/dt   = alphaN - n*(alphaN + betaN) : 1
+dh/dt   = alphaH - h*(alphaH + betaH) : 1
+ds/dt   = alphaS - s*(alphaS + betaS) : 1
+dq/dt   = (qinf - q)/tauq : 1
+dc/dt   = (cinf - c)/tauc : 1
+dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 '''
 
 #####################################################################
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
    'tau_AMPA': 2.0 * ms,  # AMPA receptor time constant
-   'g_AMPA': 0.1 * nS,   # Maximum AMPA conductance
+   'g_AMPA': 1 * mS,   # Maximum AMPA conductance
    'V_E': 0.0 * mV       # AMPA reversal potential
 }
 
 # Synapse model equations
 eqs_MFB_CA3p_syn = '''
-ds_AMPA/dt = -s_AMPA / tau_AMPA : siemens 
+ds_AMPA/dt = -s_AMPA / tau_AMPA : siemens (clock-driven)
 I_AMPA = s_AMPA * (Vd_post- V_E) : amp
 Isyn_post = I_AMPA : amp (summed)
 '''
