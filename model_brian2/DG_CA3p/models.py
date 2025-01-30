@@ -70,14 +70,14 @@ dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
    'tau_AMPA': 2.0 * ms,  # AMPA receptor time constant
-   'g_AMPA': 1 * mS,   # Maximum AMPA conductance
-   'V_E': 0.0 * mV       # AMPA reversal potential
+   'g_AMPA': 3 * mS,      # Maximum AMPA conductance
+   'V_E': 0.0 * mV        # AMPA reversal potential
 }
 
 # Synapse model equations
 eqs_MFB_CA3p_syn = '''
 ds_AMPA/dt = -s_AMPA / tau_AMPA : siemens (clock-driven)
-I_AMPA = s_AMPA * (Vd_post- V_E) : amp
+I_AMPA = s_AMPA * (Vd_post - V_E) : amp
 Isyn_post = I_AMPA : amp (summed)
 '''
 
