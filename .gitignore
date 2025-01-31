@@ -6,7 +6,6 @@ plots
 .logs
 test*
 precession
-scripts_plotting
 temp*
 cscripts
 .ipy*
