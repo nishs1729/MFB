@@ -7,9 +7,9 @@ CA3p_PR_params = {
     'Gkdr': 15.0*mS, 
     'Gkca': 15.0*mS,
     'Gkahp': 0.8*mS,
-    'Gca': 2.1*mS,
+    'Gca': 10*mS,
     'Gl': 0.1*mS,
-    'Gc': 1*mS,
+    'Gc': 2.1*mS,
     'Vna': 60.0*mV,
     'Vk': -75.0*mV,
     'Vca': 80.0*mV,
@@ -17,23 +17,24 @@ CA3p_PR_params = {
     'Vnmda': 3.5*mV,
     'Vdmpa': 0.0*mV,
     'p': 0.5,
-    'Cm_PR': 3.0*uF,
+    'Cm': 3.0*uF,
     'Isapp': 0.0,
     'Idapp': 0.0,
     'Gmax_ampa':  1*msiemens,
     'G_gabaA':  1*msiemens,
     'G_gabaB':  3*msiemens
 }
-
+## Model is taken from:
+## https://doi.org/10.1007/s10827-016-0606-8
 eqnCA3_PR = '''
-alphaM = 0.32*4/(exprel((13.1 - Vs/mV)/4))/ms : Hz
-betaM  = 0.28*5/(exprel((Vs/mV + 40.1)/5))/ms : Hz
-alphaN = 0.016*5/(exprel((35.1 - Vs/mV)/5))/ms : Hz
-betaN  = 0.25*exp((0.5 - 0.025*Vs/mV))/ms : Hz
-alphaH = 0.128*exp((17 - Vs/mV)/18)/ms : Hz
-betaH  = 4/(1 + exp((40 - Vs/mV)/5))/ms : Hz
-alphaS = 1.6/(1 + exp(-0.072*(Vd/mV - 65)))/ms : Hz
-betaS  = 0.02*5/exprel((Vd/mV - 51.1)/5)/ms : Hz
+alphaM = 0.32*4/(exprel((-46.9 - Vs/mV)/4))/ms : Hz
+betaM  = 0.28*5/(exprel((Vs/mV + 19.9)/5))/ms : Hz
+alphaN = 0.016*5/(exprel((-24.9 - Vs/mV)/5))/ms : Hz
+betaN  = 0.25*exp((-1 - 0.025*Vs/mV))/ms : Hz
+alphaH = 0.128*exp((-43 - Vs/mV)/18)/ms : Hz
+betaH  = 4/(1 + exp((-20 - Vs/mV)/5))/ms : Hz
+alphaS = 1.6/(1 + exp(-0.072*(Vd/mV - 5)))/ms : Hz
+betaS  = 0.02*5/exprel((Vd/mV + 8.9)/5)/ms : Hz
 qinf   = 0.7894*exp(0.0002726*Ca) - 0.7292*exp(-0.01672*Ca) : 1
 tauq   = (657.9*exp(-0.02023*Ca) + 301.8*exp(-0.002381*Ca))*ms : second
 cinf   = 1.0/(1.0 + exp((-10.1 - Vd/mV)/0.1016))**0.00925 : 1
@@ -55,8 +56,8 @@ Ileaks = Gl*(Vs - Vl) : amp
 Isyn : amp
 
 ## ODEs
-dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p)/Cm_PR : volt
-dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Isyn - Isd/(1-p))/Cm_PR : volt
+dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p)/Cm : volt
+dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Isyn - Isd/(1-p))/Cm : volt
 dm/dt   = alphaM - m*(alphaM + betaM) : 1
 dn/dt   = alphaN - n*(alphaN + betaN) : 1
 dh/dt   = alphaH - h*(alphaH + betaH) : 1
@@ -70,7 +71,7 @@ dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
    'tau_AMPA': 2.0 * ms,  # AMPA receptor time constant
-   'g_AMPA': 3 * mS,      # Maximum AMPA conductance
+   'g_AMPA': 0.3 * mS,      # Maximum AMPA conductance
    'V_E': 0.0 * mV        # AMPA reversal potential
 }
 
