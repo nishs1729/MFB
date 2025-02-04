@@ -107,10 +107,10 @@ def check_multiple_rel(spike):
     if any(diff <= tstep):
         idx = np.where(diff <= tstep)
         # print(idx, diff)
-        # print(spike)
+        print(spike)
         for i in idx:
             spike[i+1] = spike[i+1] + tstep*1.1
-        # print(spike, '\n')
+        print(spike, '\n')
         
         return check_multiple_rel(spike)
     else:

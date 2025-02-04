@@ -79,7 +79,7 @@ def check_multiple_rel(spike, tstep=0.1):
         # print(spike)
         for i in idx:
             spike[i+1] = spike[i+1] + tstep*1.1
-        return False
+        return check_multiple_rel(spike, tstep=tstep)
     else:
         return True
 
