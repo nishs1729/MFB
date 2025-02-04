@@ -2,6 +2,8 @@ from brian2 import *
 
 #####################################################################
 ### Pinsky-Rinzel CA3 Model
+### taken from: https://doi.org/10.1007/s10827-016-0606-8
+
 CA3p_PR_params = {
     'Gna': 30.0*mS,
     'Gkdr': 15.0*mS, 
@@ -9,7 +11,7 @@ CA3p_PR_params = {
     'Gkahp': 0.8*mS,
     'Gca': 10*mS,
     'Gl': 0.1*mS,
-    'Gc': 2.1*mS,
+    'Gc': 10*mS,
     'Vna': 60.0*mV,
     'Vk': -75.0*mV,
     'Vca': 80.0*mV,
@@ -24,8 +26,7 @@ CA3p_PR_params = {
     'G_gabaA':  1*msiemens,
     'G_gabaB':  3*msiemens
 }
-## Model is taken from:
-## https://doi.org/10.1007/s10827-016-0606-8
+
 eqnCA3_PR = '''
 alphaM = 0.32*4/(exprel((-46.9 - Vs/mV)/4))/ms : Hz
 betaM  = 0.28*5/(exprel((Vs/mV + 19.9)/5))/ms : Hz
