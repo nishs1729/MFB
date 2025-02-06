@@ -4,6 +4,7 @@ import pandas as pd
 import pickle as pk
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import matplotlib.patches as patches
 from itertools import product, combinations_with_replacement
 
 
