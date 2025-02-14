@@ -1,5 +1,6 @@
 from models import *
 from brian2 import *
+import pickle as pk
 
 def run_sim(nMFB, spid, sptimes, tstep=0.1):
     defaultclock.dt = tstep*ms
@@ -95,3 +96,56 @@ def get_spike_generator_info(spikes):
         sptimes += spike.tolist()
 
     return len(spikes), spid, [float(a) for a in sptimes]
+
+
+################################################################################
+def getAPprob(inf, tc=20):
+    """
+    Calculate the action potential (AP) probability and nth AP probability from simulation data.
+    Parameters:
+    inf (str): Path to the input file containing AP times.
+    tc (float, optional): Time constant for the AP probability calculation. Default is 20 ms.
+    Returns:
+    tuple: A tuple containing:
+        - apProb (numpy.ndarray): Array of AP probabilities for each stimulus time.
+        - ap1Prob (numpy.ndarray): Array of 1st AP probabilities for each stimulus time.
+    """
+    with open(inf, "rb") as infile:
+        ca3 = pk.load(infile)
+        apTimes = ca3['CA3p_spikes']
+        seeds = len(ca3['CA3p_spikes'])
+        # print(seeds, ca3.keys())
+
+    # print(apTimes[:10])
+    ## Stimulus times
+    nAP = 10
+    stimTimes = np.sort([1.5 + na*20 for na in range(nAP)])
+    # print(stimTimes)
+    
+    ## AP probability
+    apProb = np.zeros(nAP)
+    for apts in apTimes:
+        temp = np.zeros(nAP)
+        for apt in apts:
+            for i,st in enumerate(stimTimes):
+                if np.ceil((st+tc-apt)/tc)==1:
+                    temp[i] = 1
+        apProb += temp
+    apProb /= seeds
+
+    ## probability of 1st AP
+    ap1Prob = np.zeros(nAP)
+    for apts in apTimes:
+        # print(apts)
+        temp = np.zeros(nAP)
+        for i,st in enumerate(stimTimes):
+            try:
+                if np.ceil((st+tc-apts[0])/tc)==1:
+                    temp[i] = 1
+            except IndexError:
+                continue
+        ap1Prob += temp
+    # print(ap1Prob)
+    ap1Prob /= seeds
+    
+    return apProb, ap1Prob
