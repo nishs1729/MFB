@@ -28,7 +28,7 @@ def run_sim(nMFB, spid, sptimes, tstep=0.1):
     MFB_CA3p_syn.connect(j='i')
 
     # Monitors
-    stMCA3p = StateMonitor(CA3p, ['Vd', 'Vs', 'Isyn'], record=True)
+    stMCA3p = StateMonitor(CA3p, ['Vd', 'Vs', 'Iampa', 'Inmda'], record=True)
     spMCA3p = SpikeMonitor(CA3p)
 
     # Run the simulation
@@ -49,7 +49,8 @@ def test_plot(stMCA3p, spMCA3p, vrel_times):
     axes[0,0].legend(frameon=False)
 
     ## Plot the synaptic current
-    axes[0,1].plot(stMCA3p.t/ms, -stMCA3p.Isyn[0]/uA, 'b-', label='Isyn')
+    axes[0,1].plot(stMCA3p.t/ms, -stMCA3p.Iampa[0]/uA, 'b-', label='I_ampa')
+    axes[0,1].plot(stMCA3p.t/ms, -stMCA3p.Inmda[0]/uA, 'g-', label='I_nmda')
     axes[0,1].set_xlabel("Time (ms)")
     axes[0,1].set_ylabel(r"AMPA current ($\mu$A)")
     axes[0,1].legend(frameon=False)

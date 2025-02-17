@@ -54,11 +54,12 @@ Isd    = Gc*(Vd - Vs) : amp
 Ids    = -Isd : amp
 Ileakd = Gl*(Vd - Vl) : amp
 Ileaks = Gl*(Vs - Vl) : amp
-Isyn : amp
+Iampa : amp
+Inmda : amp
 
 ## ODEs
 dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p)/Cm : volt
-dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Isyn - Isd/(1-p))/Cm : volt
+dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Iampa - Inmda - Isd/(1-p))/Cm : volt
 dm/dt   = alphaM - m*(alphaM + betaM) : 1
 dn/dt   = alphaN - n*(alphaN + betaN) : 1
 dh/dt   = alphaH - h*(alphaH + betaH) : 1
@@ -71,19 +72,34 @@ dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 #####################################################################
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
-   'tau_AMPA': 2.0 * ms,  # AMPA receptor time constant
-   'g_AMPA': 0.3 * mS,      # Maximum AMPA conductance
-   'V_E': 0.0 * mV        # AMPA reversal potential
+    'tau_AMPA': 2.0 * ms,  # AMPA receptor time constant
+    'g_AMPA': 0.3 * mS,      # Maximum AMPA conductance
+    'V_AMPA': 0.0 * mV,        # AMPA reversal potential
+    'V_NMDA': 0.0 * mV,        # NMDA reversal potential
+    'g_NMDA': 0.327 * mS,
+    'tau_NMDA_rise': 2.0 * ms,
+    'tau_NMDA_decay': 100.0 * ms,
+    'alpha': 0.5 / ms,
+    'Mg2': 1.0
 }
 
 # Synapse model equations
 eqs_MFB_CA3p_syn = '''
+## AMPA model
 ds_AMPA/dt = -s_AMPA / tau_AMPA : siemens (clock-driven)
-I_AMPA = s_AMPA * (Vd_post - V_E) : amp
-Isyn_post = I_AMPA : amp (summed)
+I_AMPA = s_AMPA * (Vd_post - V_AMPA) : amp
+Iampa_post = I_AMPA : amp (summed)
+
+## NMDA model
+# I_syn = I_AMPA_ext + I_AMPA_rec + I_NMDA_rec + I_GABA_rec : amp
+I_NMDA = g_NMDA*(Vd_post - V_NMDA)/(1 + Mg2*exp(-0.062*Vd_post/mV)/3.57)*s_NMDA : amp
+ds_NMDA / dt = - s_NMDA / tau_NMDA_decay + alpha * x * (1 - s_NMDA) : 1 (clock-driven)
+dx / dt = - x / tau_NMDA_rise : 1 (clock-driven)
+Inmda_post = I_NMDA : amp (summed)
 '''
 
 # Presynaptic updates
 MFB_CA3p_onpre = '''
 s_AMPA += g_AMPA  # Increment conductance on vesicle release
+x += 1
 '''
