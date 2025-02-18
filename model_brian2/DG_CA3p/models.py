@@ -16,11 +16,11 @@ CA3p_PR_params = {
     'Vk': -75.0*mV,
     'Vca': 80.0*mV,
     'Vl': -60.0*mV,
-    'p': 0.75,
+    'p': 0.5,
     'Cm': 3.0*uF,
-    'Isapp': 0.0,
+    'Isapp': -0.3*uA, # background inhibition
     'Idapp': 0.0,
-    'noise': 1*uA,
+    'noise': 2*uA,
 }
 
 eqnCA3_PR = '''
@@ -56,8 +56,8 @@ Inmda : amp
 ## ODEs
 # dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p)/Cm : volt
 # dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Iampa - Inmda - Isd/(1-p))/Cm : volt
-dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p + noise*sqrt(1/1*ms)*xi)/Cm : volt
-dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Iampa - Inmda - Isd/(1-p) + noise*sqrt(1/1*ms)*xi_1)/Cm : volt
+dVs/dt  = (- Ileaks - Ina - Ikdr - Ids/p - noise*sqrt(1/1*ms)*xi + Isapp)/Cm : volt
+dVd/dt  = (- Ileakd - Ica - Ikca - Ikahp - Iampa - Inmda - Isd/(1-p) - noise*sqrt(1/1*ms)*xi_1)/Cm : volt
 dm/dt   = alphaM - m*(alphaM + betaM) : 1
 dn/dt   = alphaN - n*(alphaN + betaN) : 1
 dh/dt   = alphaH - h*(alphaH + betaH) : 1
@@ -71,14 +71,13 @@ dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
     'tau_AMPA': 2.0 * ms,      # AMPA receptor time constant
-    'g_AMPA': 0.3 * mS,        # Maximum AMPA conductance
+    'g_AMPA': 3 * mS,          # Maximum AMPA conductance
     'V_AMPA': 0.0 * mV,        # AMPA reversal potential
     'g_NMDA': 0.327 * mS,      # Maximum NMDA conductance
-    # 'g_NMDA': 0 * mS,      # Maximum NMDA conductance
     'V_NMDA': 0.0 * mV,        # NMDA reversal potential
     'tau_NMDA_rise': 2.0 * ms,
     'tau_NMDA_decay': 100.0 * ms,
-    'alpha': 0.5 / ms,  ## default: 0.5 / ms
+    'alpha': 0.5 / ms,
     'Mg2': 1.0
 }
 
