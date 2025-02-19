@@ -8,11 +8,9 @@ def run_sim(nMFB, spid, sptimes, tstep=0.1):
 
     MFBvrel = SpikeGeneratorGroup(nMFB, spid, sptimes*ms)
 
-
-    MFB_CA3p_syn_params['g_AMPA'] = 0.1 * mS
     nCA3p = nMFB
     CA3p = NeuronGroup(nCA3p, eqnCA3_PR, 
-                    method='exponential_euler', 
+                    method='euler', 
                     threshold='Vs>0*mV', 
                     refractory='Vs>0*mV', 
                     namespace=CA3p_PR_params)

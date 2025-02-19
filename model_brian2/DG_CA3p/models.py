@@ -71,7 +71,7 @@ dCa/dt  = (-0.13*Ica/uA - 0.075*Ca)/ms : 1
 ## MFB-CA3p synapse model
 MFB_CA3p_syn_params = {
     'tau_AMPA': 2.0 * ms,      # AMPA receptor time constant
-    'g_AMPA': 3 * mS,          # Maximum AMPA conductance
+    'g_AMPA': 0.3 * mS,        # Maximum AMPA conductance
     'V_AMPA': 0.0 * mV,        # AMPA reversal potential
     'g_NMDA': 0.327 * mS,      # Maximum NMDA conductance
     'V_NMDA': 0.0 * mV,        # NMDA reversal potential
