@@ -20,7 +20,7 @@ CA3p_PR_params = {
     'Cm': 3.0*uF,
     'Isapp': -0.3*uA, # background inhibition
     'Idapp': 0.0,
-    'noise': 2*uA,
+    'noise': 2*uA
 }
 
 eqnCA3_PR = '''
