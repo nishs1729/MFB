@@ -89,7 +89,6 @@ I_AMPA = s_AMPA * (Vd_post - V_AMPA) : amp
 Iampa_post = I_AMPA : amp (summed)
 
 ## NMDA model
-# I_syn = I_AMPA_ext + I_AMPA_rec + I_NMDA_rec + I_GABA_rec : amp
 I_NMDA = g_NMDA*(Vd_post - V_NMDA)/(1 + Mg2*exp(-0.062*Vd_post/mV)/3.57)*s_NMDA : amp
 ds_NMDA / dt = - s_NMDA / tau_NMDA_decay + alpha * x * (1 - s_NMDA) : 1 (clock-driven)
 dx / dt = - x / tau_NMDA_rise : 1 (clock-driven)
