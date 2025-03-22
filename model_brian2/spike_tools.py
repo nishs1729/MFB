@@ -62,9 +62,19 @@ def vesInput(vrel, delta=1e-4):
 ############################################
 ### Poisson Spike Trains
 def genPoissonTrain(rate, tspan=1e3, dt=0.1, refrac=0):
-    """
-    rate: Hz; tspan: ms
-    Assumption: no multiple event within t=refrac ms
+    """Generates a Poisson spike train.
+
+    Args:
+        rate (float): The firing rate in Hz.
+        tspan (float, optional): The total time span in ms. Default is 1000 ms.
+        dt (float, optional): The time step in ms. Default is 0.1 ms.
+        refrac (float, optional): The refractory period in ms. Default is 0 ms.
+
+    Returns:
+        np.ndarray: An array of spike times in ms.
+
+    Assumptions:
+        - No multiple events occur within the refractory period.
     """
     tt = rate*refrac/(1000-rate*refrac)
     arefrac = refrac*(1+tt)
@@ -79,9 +89,15 @@ def genPoissonTrain(rate, tspan=1e3, dt=0.1, refrac=0):
     return np.array(train)/(1+tt)
 
 def getSubTrains(train, p, n=1):
-    """
-    Generate n random subsets of original train 
-    with probability p
+    """Generate n random subsets of the original train with probability p.
+
+    Args:
+        train (np.ndarray): The original train array from which subsets are generated.
+        p (float): The probability with which each element is included in the subset.
+        n (int, optional): The number of random subsets to generate. Defaults to 1.
+
+    Returns:
+        list: A list containing n subsets of the original train, where each subset is a list of elements.
     """
     rr = np.random.uniform(size=(n,train.shape[0]))
     subTrains = []
@@ -91,11 +107,18 @@ def getSubTrains(train, p, n=1):
     return subTrains
 
 def genCorrSpikeTrains(corr, rate=1, n=1, tspan=1e3, dt=0.1, refrac=5):
-    """
-    corr: expected coefficient of correlation
-    rate: Hz
-    n: number of trains
-    tspan: ms
+    """Generate correlated spike trains.
+
+    Args:
+        corr (float or list of floats): Expected coefficient of correlation. If a list is provided, multiple sets of correlated spike trains will be generated.
+        rate (float, optional): Firing rate in Hz. Default is 1 Hz.
+        n (int or list of ints, optional): Number of spike trains to generate. If a list is provided, it should match the length of `corr`. Default is 1.
+        tspan (float, optional): Time span of the spike trains in milliseconds. Default is 1000 ms.
+        dt (float, optional): Time step in milliseconds. Default is 0.1 ms.
+        refrac (float, optional): Refractory period in milliseconds. Default is 5 ms.
+
+    Returns:
+        list: A list of generated spike trains with the specified correlation.
     """
     corrTrains = []
     if hasattr(corr, '__iter__'):
