@@ -17,7 +17,7 @@ DEFINE_REACTIONS {
 }
 
 /* VDCC clusters */
-vdcc_disk_file = "vdcc_disks/vdcc_disk_n" & nVDCC & "_d" & dVAZ & "_nAZ" & nAZ & ".mdl"
+vdcc_disk_file = "vdcc_disks/vdcc_disk_n" & nVDCC & "_d" & dVDCC & "_nAZ" & nAZ & ".mdl"
 INCLUDE_FILE = vdcc_disk_file
 
 

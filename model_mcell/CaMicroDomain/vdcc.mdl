@@ -19,7 +19,7 @@ DEFINE_REACTIONS {
 INSTANTIATE VDCC OBJECT
 {
     /* VDCC release at  */
-     presynaptic_PMCA RELEASE_SITE {
+     presynaptic_VDCC RELEASE_SITE {
         SHAPE = LIST
         MOLECULE_POSITIONS {
             VDCC_C0' [0, 0, -0.4]

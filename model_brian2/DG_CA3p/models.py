@@ -73,7 +73,7 @@ MFB_CA3p_syn_params = {
     'tau_AMPA': 5.0 * ms,      # AMPA receptor time constant
     'g_AMPA': 0.2 * mS,        # Maximum AMPA conductance
     'V_AMPA': 0.0 * mV,        # AMPA reversal potential
-    'g_NMDA': 0.1 * mS,      # Maximum NMDA conductance
+    'g_NMDA': 0.1 * mS,        # Maximum NMDA conductance
     'V_NMDA': 0.0 * mV,        # NMDA reversal potential
     'tau_NMDA_rise': 2.0 * ms,
     'tau_NMDA_decay': 100.0 * ms,
