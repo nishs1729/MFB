@@ -1,0 +1,20 @@
+ISI = ISI*1e3
+VIZ_OUTPUT
+{
+	MODE = ASCII
+	FILENAME = outputDir &"/viz/mfb"
+	MOLECULES
+	{
+		NAME_LIST {Ca "cb*" "VDCC*"}
+		ITERATION_NUMBERS {POSITIONS @ [1,[2250 TO 2500 STEP 50], 
+		                                [2250+ISI TO 2500+ISI STEP 50],
+		                                [2250+ISI*2 TO 2500+ISI*2 STEP 50],
+		                                [2250+ISI*3 TO 2500+ISI*3 STEP 50],
+		                                [2250+ISI*4 TO 2500+ISI*4 STEP 50],
+		                                [2250+ISI*5 TO 2500+ISI*5 STEP 50],
+		                                [2250+ISI*6 TO 2500+ISI*6 STEP 50],
+		                                [2250+ISI*7 TO 2500+ISI*7 STEP 50],
+		                                [2250+ISI*8 TO 2500+ISI*8 STEP 50],
+		                                [2250+ISI*9 TO 2500+ISI*9 STEP 50]]}
+	}
+}

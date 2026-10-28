@@ -469,8 +469,8 @@ def simAZtest(T, CaData, sim, r, RRP=29, refracTau=6.33e-3):
     npts = len(T)
 
     ### Set initial conditions
-    sim.setCompConc('cytVol', 'Ca', 100e-9)
-    sim.setPatchCount('cytSurf', 'AZ00', RRP)
+    sim.setCompSpecConc('cytVol', 'Ca', 100e-9)
+    sim.setPatchSpecCount('cytSurf', 'AZ00', RRP)
 
     resCa = np.zeros([npts])
     resAZ = np.zeros([npts, 18])
@@ -484,10 +484,10 @@ def simAZtest(T, CaData, sim, r, RRP=29, refracTau=6.33e-3):
     for t in range(npts):
         sim.run(T[t])
 
-        sim.setCompConc('cytVol', 'Ca', abs(CaData[t]))
+        sim.setCompSpecConc('cytVol', 'Ca', abs(CaData[t]))
 
         for i,mol in enumerate(azMolName[:18]):
-            resAZ[t,i] = sim.getPatchCount('cytSurf', mol)
+            resAZ[t,i] = sim.getPatchSpecCount('cytSurf', mol)
             
         for i,reac in enumerate(vesRelReac):
             vesRel[t,i] = sim.getPatchSReacExtent('cytSurf', reac)
@@ -518,8 +518,8 @@ def simAZ(T, CaData, sim, r, RRP=29, refracTau=6.33e-3):
     npts = len(T)
 
     ### Set initial conditions
-    sim.setCompConc('cytVol', 'Ca', 100e-9)
-    sim.setPatchCount('cytSurf', 'AZ00', RRP)
+    sim.setCompSpecConc('cytVol', 'Ca', 100e-9)
+    sim.setPatchSpecCount('cytSurf', 'AZ00', RRP)
 
     resCa = np.zeros([npts])
     resAZ = np.zeros([npts, 18])
@@ -533,12 +533,12 @@ def simAZ(T, CaData, sim, r, RRP=29, refracTau=6.33e-3):
     for t in range(npts):
         sim.run(T[t])
 
-        sim.setCompConc('cytVol', 'Ca', abs(CaData[t]))
+        sim.setCompSpecConc('cytVol', 'Ca', abs(CaData[t]))
 
         #resCa[t] = sim.getCompCount('cytVol', 'Ca')
 
         for i,mol in enumerate(azMolName[:18]):
-            resAZ[t,i] = sim.getPatchCount('cytSurf', mol)
+            resAZ[t,i] = sim.getPatchSpecCount('cytSurf', mol)
             
         for i,reac in enumerate(vesRelReac):
             vesRel[t,i] = sim.getPatchSReacExtent('cytSurf', reac)

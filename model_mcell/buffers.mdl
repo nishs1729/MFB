@@ -1,7 +1,7 @@
 //------- Calbindin Rates and Parameters ----------
 
 D_cb = 0 //0.28e-6 // Schmidt et al. 2003, J. Physiol.
-cb_conc = 40e-6
+//cb_conc = 40e-6
 
 // calB reaction rates
 cbH_on  = 0.55e7
