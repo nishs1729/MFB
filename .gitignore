@@ -11,3 +11,6 @@ temp*
 cscripts
 .ipy*
 .vs*
+**/instruction*
+**/*egg*
+poirazi_model

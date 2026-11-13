@@ -1,0 +1,127 @@
+/home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms
+cfiles =
+Mod files: "./cad.mod" "./cagk.mod" "./calH.mod" "./cal.mod" "./car.mod" "./cat.mod" "./hha2.mod" "./hha_old.mod" "./h.mod" "./kadist.mod" "./kaprox.mod" "./kca.mod" "./km.mod" "./mfbsyn.mod" "./nap.mod" "./somacar.mod"
+
+Creating 'x86_64' directory for .o files.
+
+MODOBJS= ./cad.o ./cagk.o ./calH.o ./cal.o ./car.o ./cat.o ./hha2.o ./hha_old.o ./h.o ./kadist.o ./kaprox.o ./kca.o ./km.o ./mfbsyn.o ./nap.o ./somacar.o
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././cad.mod
+ -> [32mNMODL[0m .././cagk.mod
+ -> [32mNMODL[0m .././calH.mod
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 140 of PARAMETER eca will be ignored and set by NEURON.
+Warning: Default 20 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 0.001 of PARAMETER cai will be ignored and set by NEURON.
+ -> [32mNMODL[0m .././cal.mod
+ -> [32mNMODL[0m .././car.mod
+ -> [32mNMODL[0m .././cat.mod
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 140 of PARAMETER eca will be ignored and set by NEURON.
+Warning: Default 2 of PARAMETER cao will be ignored and set by NEURON.
+Warning: Default 5e-05 of PARAMETER cai will be ignored and set by NEURON.
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 2 of PARAMETER cao will be ignored and set by NEURON.
+Warning: Default 5e-05 of PARAMETER cai will be ignored and set by NEURON.
+Warning: Default 22 of PARAMETER celsius will be ignored and set by NEURON.
+ -> [32mNMODL[0m .././hha2.mod
+ -> [32mNMODL[0m .././hha_old.mod
+ -> [32mNMODL[0m .././h.mod
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default -77 of PARAMETER ek will be ignored and set by NEURON.
+Warning: Default 60 of PARAMETER ena will be ignored and set by NEURON.
+Warning: Default 50 of PARAMETER ena will be ignored and set by NEURON.
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default -77 of PARAMETER ek will be ignored and set by NEURON.
+Warning: Default 60 of PARAMETER ena will be ignored and set by NEURON.
+ -> [32mNMODL[0m .././kadist.mod
+ -> [32mNMODL[0m .././kaprox.mod
+ -> [32mNMODL[0m .././kca.mod
+Warning: Default 24 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default -80 of PARAMETER ek will be ignored and set by NEURON.
+Warning: Default 24 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default -77 of PARAMETER ek will be ignored and set by NEURON.
+ -> [32mNMODL[0m .././km.mod
+Warning: Default 36 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 2.4e-05 of PARAMETER cai will be ignored and set by NEURON.
+Warning: Default -80 of PARAMETER ek will be ignored and set by NEURON.
+ -> [32mNMODL[0m .././mfbsyn.mod
+ -> [32mNMODL[0m .././nap.mod
+ -> [32mNMODL[0m .././somacar.mod
+Warning: Default 50 of PARAMETER ena will be ignored and set by NEURON.
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cad.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cagk.cpp
+Warning: Default 34 of PARAMETER celsius will be ignored and set by NEURON.
+Warning: Default 140 of PARAMETER eca will be ignored and set by NEURON.
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/calH.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cal.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/car.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cat.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/hha2.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/hha_old.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/h.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kadist.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kaprox.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kca.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/km.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/mfbsyn.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/nap.cpp
+ -> [32mCompiling[0m /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/somacar.cpp
+ => [32mLINKING[0m shared library "/home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/./libnrnmech.so"
+ => [32mLINKING[0m executable "/home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/./special" LDFLAGS are:     
+Successfully created x86_64/special
+Translating cad.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cad.cpp
+Translating cagk.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cagk.cpp
+Translating calH.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/calH.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: Assignment to the GLOBAL variable, "oinf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "tau", is not thread safe
+Notice: This mechanism cannot be used with CVODE
+Thread Safe
+Translating car.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/car.cpp
+Translating cal.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cal.cpp
+Translating cat.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/cat.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Translating hha2.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/hha2.cpp
+Translating hha_old.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/hha_old.cpp
+Notice: VERBATIM blocks are not thread safe
+Translating h.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/h.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: This mechanism cannot be used with CVODE
+Thread Safe
+Translating kadist.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kadist.cpp
+Translating kaprox.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kaprox.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: Assignment to the GLOBAL variable, "linf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "ninf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "taun", is not thread safe
+Notice: Assignment to the GLOBAL variable, "taul", is not thread safe
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: Assignment to the GLOBAL variable, "linf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "ninf", is not thread safe
+Notice: Assignment to the GLOBAL variable, "taun", is not thread safe
+Notice: Assignment to the GLOBAL variable, "taul", is not thread safe
+Translating kca.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/kca.cpp
+Thread Safe
+Translating km.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/km.cpp
+Translating mfbsyn.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/mfbsyn.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Notice: Assignment to the GLOBAL variable, "tadj", is not thread safe
+Thread Safe
+Translating nap.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/nap.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
+Translating somacar.mod into /home/nishant/lab/project_MFB/MFB_poirazi_model/mfb/mechanisms/x86_64/somacar.cpp
+Notice: VERBATIM blocks are not thread safe
+Notice: This mechanism cannot be used with CVODE
