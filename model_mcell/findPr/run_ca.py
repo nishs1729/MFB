@@ -6,14 +6,15 @@ from itertools import product, chain
 import scipy.interpolate as itp
 from multiprocessing import Pool, Process
 
-sys.path.append('/home/nishant/MFB/scripts')
-sys.path.append('/home/nishant/MFB/steps')
-sys.path.append('/home/nishant/scripts')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[2]
+sys.path.append(str(REPO / 'scripts_analysis'))
+sys.path.append(str(REPO / 'model_steps'))
 from analysis import *
 from peaks import *
 from misc import *
 
-resultPath = "/home/nishant/results/MFB/findPr/"
+resultPath = str(REPO / 'data/findPr') + '/'
 fname = "ca.dat" 
 
 from MFB_model import *

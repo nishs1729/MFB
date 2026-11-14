@@ -1,3 +1,4 @@
+from pathlib import Path
 ss = '''PMCA_density_presynaptic = 180
 
 // rates for PMCA pump
@@ -76,4 +77,4 @@ for nAZ in range(7,36):
     text += ee
     print(text)
 
-    with open(f'/home/nishant/lab/MFB/model_mcell/control_eachCa/pmca/pmca_AZ_{nAZ}.mdl', 'w+') as wf: wf.write(text)
+    with open(Path(__file__).resolve().parent / f'pmca_AZ_{nAZ}.mdl', 'w+') as wf: wf.write(text)

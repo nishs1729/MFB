@@ -6,14 +6,15 @@ from itertools import *
 import scipy.interpolate as itp
 from multiprocessing import Pool, Process
 
-sys.path.append('/home/nishant/lab/MFB/scripts')
-sys.path.append('/home/nishant/lab/MFB/steps')
-sys.path.append('/home/nishant/lab/scripts')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[2]
+sys.path.append(str(REPO / 'scripts_analysis'))
+sys.path.append(str(REPO / 'model_steps'))
 from analysis import *
 from peaks import *
 
 dataPath = "/media/nishant/4tb/output/MFB/control/"
-resultPath = "/home/nishant/lab/MFB/results/control/"
+resultPath = str(REPO / 'data/control') + '/'
 
 #dirs = [a for a in getDirs(resultPath, sstr='nVDCC') if "ISI_50" in a]
 dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "ISI_20" in a]

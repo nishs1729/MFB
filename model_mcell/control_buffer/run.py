@@ -8,16 +8,16 @@ from itertools import *
 import scipy.interpolate as itp
 from multiprocessing import Pool, Process
 
-_home = Path.home()
-sys.path.append(str(_home / 'lab/project_MFB/scripts_analysis'))
-sys.path.append(str(_home / 'lab/project_MFB/model_steps'))
+REPO = Path(__file__).resolve().parents[2]
+sys.path.append(str(REPO / 'scripts_analysis'))
+sys.path.append(str(REPO / 'model_steps'))
 # sys.path.append(str(_home / 'lab/scripts'))
 from analysis import *
 from peaks import *
 
 simType = 'control_buffer'
 dataPath = "/media/nishant/data/nishant/output/MFB/" + simType
-resultPath = "/home/nishant/lab/project_MFB/data/" + simType
+resultPath = str(REPO / 'data' / simType)
 
 #dirs = [a for a in getDirs(resultPath, sstr='nVDCC') if "ISI_50" in a]
 dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "ISI_20" in a]

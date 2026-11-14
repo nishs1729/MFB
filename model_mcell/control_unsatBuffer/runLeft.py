@@ -6,11 +6,14 @@ from tqdm import tqdm
 import os, sys
 from time import sleep
 import numpy as np
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[2]
 
 
 
 dataPath = "/media/nishant/4tb/output/MFB/control_unsatBuffer/"
-resultPath = "/home/nishant/lab/results/MFB/control_unsatBuffer/"
+resultPath = str(REPO / 'data/control_unsatBuffer') + '/'
 
 dirs = [d for d in os.listdir(dataPath) if 'nVDCC' in d]
 #print(dirs)
@@ -51,8 +54,8 @@ def emptyFiles(dirs, dataPath, nseeds=300):
 
 
 def runmdl(fname, seed):
-	loc = '/home/nishant/lab/MFB/mcell/control_unsatBuffer'
-	query = f"mcell32 {os.path.join(loc,fname)} -seed {seed} -logfreq 50000"
+	loc = str(REPO / 'model_mcell/control_unsatBuffer')
+	query = f"{REPO / 'mcell32'} {os.path.join(loc,fname)} -seed {seed} -logfreq 50000"
 	print(query)
 	os.system(query)
 

@@ -1,0 +1,16 @@
+# Python packages for the MCell drivers and analysis (run.py, gen_mdl_files.ipynb, findPr/, ...).
+# Also uses local modules from ../scripts_analysis (analysis, peaks, misc) and ../model_steps (MFB_model).
+#
+# The simulations use the MCell 3 binary, which is not a pip package: the static
+# executable is in ../mcell32, and the job scripts call /apps/bin/mcell.
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+tqdm
+brian2          # imported in syt7KO/run.ipynb and control_eachCa/run.ipynb
+
+# for the notebooks (tqdm_notebook needs ipywidgets)
+ipykernel
+ipywidgets

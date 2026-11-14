@@ -6,15 +6,16 @@ from itertools import product, chain
 import scipy.interpolate as itp
 from multiprocessing import Pool, Process
 
-sys.path.append('/home/nishant/lab/MFB/scripts')
-sys.path.append('/home/nishant/lab/MFB/steps')
-sys.path.append('/home/nishant/lab/scripts')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[2]
+sys.path.append(str(REPO / 'scripts_analysis'))
+sys.path.append(str(REPO / 'model_steps'))
 from analysis import *
 from peaks import *
 
 
 dataPath = "/media/nishant/4tb/output/MFB/control_unsatBuffer/"
-resultPath = "/home/nishant/lab/MFB/results/control_unsatBuffer/"
+resultPath = str(REPO / 'data/control_unsatBuffer') + '/'
 '''
 dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "nVDCC_1" in a]
 #dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "ISI_50" in a]
@@ -22,7 +23,7 @@ dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "nVDCC_1" in a]
 tempdirs = np.array(dirs)[:]'''
 
 
-setupLoc = '/home/nishant/lab/MFB/mcell'
+setupLoc = str(REPO / 'model_mcell')
 setup = np.genfromtxt(os.path.join(setupLoc, 'controls.dat'), usecols=(1,2,3,4,6), dtype='int')
 
 tempdirs = []

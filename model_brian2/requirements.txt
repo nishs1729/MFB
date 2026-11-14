@@ -1,0 +1,11 @@
+# Brian2 dentate gyrus / DG-CA3 models (DG_model*.ipynb, DG_CA3p/, sangrah/)
+brian2
+numpy
+scipy
+pandas
+matplotlib
+cycler
+rich
+
+# for the notebooks
+ipykernel

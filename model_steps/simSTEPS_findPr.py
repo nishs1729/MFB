@@ -6,15 +6,16 @@ from itertools import product, chain
 import scipy.interpolate as itp
 from multiprocessing import Pool, Process
 
-sys.path.append('/home/nishant/lab/MFB/scripts')
-sys.path.append('/home/nishant/lab/MFB/steps')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[1]
+sys.path.append(str(REPO / 'scripts_analysis'))
 # sys.path.append('/home/nishant/lab/scripts')
 from analysis import *
 from peaks import *
 from misc import *
 
 
-resultPath = "/media/nishant/data/results/findPr/"
+resultPath = str(REPO / 'data/findPr') + '/'
 # dirs = np.array(getDirs(resultPath, sstr='nVDCC'))
 # print(dirs.shape[0])
 

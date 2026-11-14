@@ -1,0 +1,14 @@
+# Python packages for the STEPS MFB model (MFB_model.py, simSTEPS*.py, notebooks).
+# Also uses local modules from ../scripts_analysis (analysis, peaks).
+#
+# STEPS is not on PyPI, so build it from source: https://github.com/CNS-OIST/STEPS
+# The code uses the legacy API (steps.model, steps.geom, steps.rng, steps.solver.Wmdirect),
+# which STEPS >= 4 still provides.
+numpy
+scipy
+matplotlib      # includes mpl_toolkits.mplot3d
+tqdm
+
+# for the notebooks (tqdm_notebook needs ipywidgets)
+ipykernel
+ipywidgets

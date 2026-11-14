@@ -6,14 +6,15 @@ from random import randint
 # import scipy.interpolate as itp
 from multiprocessing import Pool
 
-sys.path.append('../scripts')
-sys.path.append('../steps')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[1]
+sys.path.append(str(REPO / 'scripts_analysis'))
 from analysis import *
 from peaks import *
 from misc import *
 
 simType = 'control'
-resultPath = os.path.join("../results/", simType)
+resultPath = str(REPO / 'data' / simType)
 
 siminfo = []
 with open('newsims', 'r') as nf:

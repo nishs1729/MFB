@@ -6,20 +6,22 @@ import scipy.interpolate as itp
 from itertools import product, chain
 from multiprocessing import Pool, Process
 
-sys.path.append('/home/nishant/lab/MFB/scripts')
-sys.path.append('/home/nishant/lab/MFB/steps')
+from pathlib import Path
+REPO = Path(__file__).resolve().parents[2]
+sys.path.append(str(REPO / 'scripts_analysis'))
+sys.path.append(str(REPO / 'model_steps'))
 from peaks import *
 from analysis import *
 
 dataPath = "/media/nishant/4tb/output/MFB/control/"
-resultPath = "/home/nishant/lab/MFB/results/syt7KO/"
+resultPath = str(REPO / 'data/syt7KO') + '/'
 
 syt7KO = 'syt7KO'
 
 #dirs = [a for a in getDirs(dataPath, sstr='nVDCC') if "ISI_20" in a]
 #tempdirs = np.array(dirs)
 
-setupLoc = '/home/nishant/lab/MFB/mcell'
+setupLoc = str(REPO / 'model_mcell')
 setup = np.genfromtxt(os.path.join(setupLoc, 'controls.dat'), usecols=(1,2,3,4,6), dtype='int')
 
 tempdirs = []

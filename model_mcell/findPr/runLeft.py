@@ -6,11 +6,14 @@ from tqdm import tqdm
 import os, sys
 from time import sleep
 import numpy as np
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[2]
 
 
 
 dataPath = "/media/nishant/4tb/output/MFB/findPr/"
-resultPath = "/home/nishant/lab/results/MFB/findPr/"
+resultPath = str(REPO / 'data/findPr') + '/'
 
 dirs = os.listdir(dataPath)
 #print(dirs)
@@ -51,8 +54,8 @@ def emptyFiles(dirs, dataPath):
 
 
 def runmdl(fname, seed):
-	loc = '/home/nishant/lab/MFB/mcell/findPr'
-	query = f"mcell32 {os.path.join(loc,fname)} -seed {seed} -logfreq 5000"
+	loc = str(REPO / 'model_mcell/findPr')
+	query = f"{REPO / 'mcell32'} {os.path.join(loc,fname)} -seed {seed} -logfreq 5000"
 	print(query)
 	os.system(query)
 
