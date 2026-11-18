@@ -27,12 +27,30 @@ $PY run.py --ves <dir> --mode iclamp                            # EPSPs instead 
 $PY run.py --ves ../data/findPr/nVDCC_10_dVAZ_100_nAZ_11 --key 30   # flat file with several keys
 $PY run.py --ves <dir> --site 'apical_dendrite[14](0.5)'        # fixed site instead of random
 $PY plot.py results/<run>.npz [--rep 2]                          # figures from a saved run
+$PY diagnose.py --from results/<run>.npz [--rep 0] [--syn 0]   # what every component is doing
 $PY checks/sanity.py                                             # 7 checks, about 25 s
 ```
 
 `$PY run.py -h` lists every option. Each run writes
 `results/<data-dir>_N<n>_M<reps>_seed<s>_<mode>.npz`, plus a `.png` with `--plot`.
 One repetition takes about 4.5 s (300 ms of simulated time at dt = 0.025 ms).
+
+## Diagnostics (`diagnose.py`)
+
+`diagnose.py` reruns one repetition with extra recordings. It checks that the rerun matches
+the saved trace, then writes four figures and a `summary.txt` to `results/<run>_diag/`:
+
+| figure | shows |
+|---|---|
+| `1_input.png` | morphology with the placement window and the synapses; vesicle raster; releases per AP interval (stacked by type); release latency after the preceding AP |
+| `2_synapse.png` | inside one MFBSyn (`--syn i`): vesicle ticks, g_AMPA, g_NMDA with and without the Mg block, local and somatic v, B(v)(t), i_AMPA / i_NMDA, B(v) curve with the voltages visited, cumulative charge. The full run is on the left and a zoom on the right (`--zoom T0 T1`) |
+| `3_channels.png` | the cell's own currents at the synapse compartment and at the soma (all 5 soma sections): Na, K split by channel (A, delayed rectifier, M, Ca-activated), Ca (L+R, T), Ih, leak, [Ca]ᵢ. All are in pA for the whole compartment, so they compare directly with the synaptic current |
+| `4_spread.png` | synaptic vs axial-into-soma vs clamp current and their charge; heatmap of the depolarisation along the apical trunk; peak depolarisation vs distance |
+
+Instead of `--from`, you can give the run.py options directly
+(`$PY diagnose.py --ves <dir> --n-mfb 3 --mode iclamp ...`). The trials and sites are then
+drawn exactly as run.py would draw them. `diagnose.py` does not change the model or
+`run.py` output.
 
 ## What the model does
 
@@ -92,6 +110,7 @@ release times.
 ```
 run.py              CLI
 plot.py             figures
+diagnose.py         diagnostic figures (one repetition, extra recordings)
 checks/sanity.py    sanity checks
 mfb/vesicles.py     vesData.dat loader (per-AZ and flat layouts), trial drawing
 mfb/synapses.py     SynParams, placement, MFBSynapse (NetCon.event delivery)

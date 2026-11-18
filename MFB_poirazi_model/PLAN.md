@@ -4,8 +4,9 @@ Goal: use the vesicle release times simulated for N mossy-fibre boutons (MFBs) a
 input to N synapses on the Poirazi et al. (2003) cell (Python/NEURON port in
 `../poirazi_model`), then record the EPSC at every synapse compartment and at the soma.
 
-**Status (2026-11-13): implemented.** See README.md. The decisions are recorded in section 4,
-in square brackets. Differences from this plan are listed in section 6.
+**Status (2026-11-17): implemented, and all 7 sanity checks pass.** See README.md for usage.
+Every decision in section 4 (in square brackets) is implemented. Section 6 lists where the
+implementation differs from this plan.
 
 ---
 
@@ -37,21 +38,25 @@ releases from all of its AZs in that trial. This matches how `scripts_analysis/a
 
 ---
 
-## 2. Proposed layout (minimal)
+## 2. Layout (as built)
 
 ```
 MFB_poirazi_model/
   PLAN.md, README.md, NOTICE.md     (NOTICE: attribution to Poirazi et al. + source commit)
+  requirements.txt                  neuron==9.0.2, numpy, matplotlib
   run.py                            CLI: python run.py --ves PATH --n-mfb N [--mode vclamp] ...
   plot.py                           EPSC figures from a results file
+  diagnose.py                       diagnostic figures: input, synapse internals, channels, spread
+  checks/sanity.py                  the sanity checks of step 8
   mfb/
-    vesicles.py                     load_mfb_trains(path, n, ...) -> list of arrays (ms)
-    synapses.py                     synapse placement and event delivery
-    experiment.py                   build cell, add synapses and recordings, run, save .npz
+    vesicles.py                     VesicleData (both layouts), trial drawing, AP protocol
+    synapses.py                     SynParams, placement, MFBSynapse (event delivery)
+    experiment.py                   MFBModel (cell + clamp + synapses + recordings), run_experiment
     cell/                           trimmed copy of the cell from ../poirazi_model
       data/morphology.json, section_lists.json
-      build.py, biophys.py, balance.py, hoc_compat.py
-    mechanisms/                     15 channel .mod files (unchanged) + 1 new synapse .mod
+      build.py, biophys.py, balance.py, hoc_compat.py, distance.py, params.py
+    mechanisms/                     15 channel .mod files (unchanged) + mfbsyn.mod
+                                    (compiled automatically on first use)
   results/
 ```
 
@@ -70,7 +75,7 @@ check.
    `Rins.dat`. This shows that nothing was lost in the copy.
 2. **Vesicle loader** (`vesicles.py`).
    - Read the pickle and detect which layout it uses.
-   - Choose N trials, either the first N or N at random with a seed.
+   - Choose N trials at random with a seed (4.2).
    - Choose which release types to include (sync / async / spont).
    - Convert seconds to ms and sort the times.
    - Optionally keep each release's AZ id and type, for later analysis.
@@ -112,7 +117,7 @@ check.
 
 ---
 
-## 4. Decisions I need from you
+## 4. Decisions (all answered, all implemented)
 
 **4.1 Where should the synapses go?**
 - **The caveat:** mossy fibres contact CA3 pyramidal cells, on thorny excrescences in
@@ -161,7 +166,8 @@ definition:
 - **(b) Current clamp.** Local EPSC = the synaptic current, and you also get EPSPs at the
   synapse and at the soma. There is no "somatic EPSC" as such. The nearest equivalent is the
   axial current flowing from the dendrite into the soma, which I can record if wanted.
-- I can make the mode a flag and support both. [Decided: both, `--mode vclamp` by default.]
+- I can make the mode a flag and support both. [Decided: (a) is the default, `--mode vclamp`.
+  (b) is also available as `--mode iclamp`.]
 - **Related:** with many synchronous MFBs, the cell (or, under the clamp, the dendrites) may
   fire Na⁺/Ca²⁺ spikes. Should there be an option to block Na⁺ (TTX/QX-314-like) or all active
   conductances (passive cell)? [Decided: no blocker flags.]
@@ -195,8 +201,10 @@ either way. [Decided: 0.025 ms, the recommendation.]
   reused, so the absolute EPSC sizes depend entirely on the values chosen in 4.5.
 - **Data formats differ between folders** (section 1). This is handled in the loader. Older
   layouts lose the AZ identity of each release, which only matters for per-AZ analysis.
-- **Runtime.** It should be small: 331 compartments, 300 ms, dt = 0.025 ms gives 12,000 steps,
-  which I expect to take seconds per run. I have not measured it yet.
+- **Runtime.** 331 compartments, 300 ms, dt = 0.025 ms gives 12,000 steps. Measured: about
+  4.5 s per repetition, so M = 100 takes about 7–8 min. `--save-every k` keeps result files
+  small when N and M are large.
+
 ---
 
 ## 6. Differences between the implementation and this plan
@@ -209,4 +217,10 @@ either way. [Decided: 0.025 ms, the recommendation.]
   "soma".
 - **Extra recording.** The axial current from the trunk into the soma (`soma_i_axial`) is
   recorded in both modes.
-- **Runtime.** Measured: about 4.5 s per repetition (the estimate above said "seconds").
+- **Sanity checks.** Besides the three in step 8, `checks/sanity.py` checks:
+  - the soma input resistance (59.6821 MΩ, as the original);
+  - the rest potential, without input and under the clamp;
+  - that repeated runs are identical after the reset.
+- **Observation on the input data.** "sync" releases come a median of 4.9 ms after the
+  preceding AP (95th percentile 16 ms). This is from the MCell labels, and the model plays the
+  times back as they are.

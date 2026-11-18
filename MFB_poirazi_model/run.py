@@ -18,10 +18,11 @@ from mfb.synapses import SynParams  # noqa: E402
 from mfb.vesicles import TYPES  # noqa: E402
 
 
-def main(argv=None) -> None:
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+def build_parser(description: str = __doc__, ves_required: bool = True) -> argparse.ArgumentParser:
+    """The run options (shared with diagnose.py)."""
+    p = argparse.ArgumentParser(description=description, formatter_class=argparse.RawDescriptionHelpFormatter)
     g = p.add_argument_group("input")
-    g.add_argument("--ves", required=True, help="vesData.dat, or the directory that contains it")
+    g.add_argument("--ves", required=ves_required, help="vesData.dat, or the directory that contains it")
     g.add_argument("--key", default=None, help="key to use for a flat file with several keys (findPr)")
     g.add_argument("--types", default=",".join(TYPES),
                    help="release types to include, comma-separated (default: %(default)s)")
@@ -56,10 +57,10 @@ def main(argv=None) -> None:
     g.add_argument("--tau-d-nmda", type=float, default=d.tau_d_nmda)
     g.add_argument("--mg", type=float, default=d.mg, help="[Mg2+]o, mM")
     g.add_argument("--e-rev", type=float, default=d.e_rev, help="reversal potential, mV")
+    return p
 
-    p.add_argument("--plot", action="store_true", help="also write the figures (plot.py)")
-    a = p.parse_args(argv)
 
+def config_from_args(p: argparse.ArgumentParser, a: argparse.Namespace) -> RunConfig:
     types = tuple(t.strip() for t in a.types.split(",") if t.strip())
     if a.site and len(a.site) != a.n_mfb:
         p.error(f"{len(a.site)} --site given but --n-mfb is {a.n_mfb}")
@@ -71,6 +72,14 @@ def main(argv=None) -> None:
                       nmda_ratio=a.nmda_ratio, tau_r_nmda=a.tau_r_nmda, tau_d_nmda=a.tau_d_nmda,
                       mg=a.mg, e_rev=a.e_rev),
     )
+    return cfg
+
+
+def main(argv=None) -> None:
+    p = build_parser()
+    p.add_argument("--plot", action="store_true", help="also write the figures (plot.py)")
+    a = p.parse_args(argv)
+    cfg = config_from_args(p, a)
     try:
         out = run_experiment(cfg, out=a.out)
     except ValueError as e:
